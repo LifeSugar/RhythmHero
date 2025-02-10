@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 247549894}
   - component: {fileID: 247549893}
   - component: {fileID: 247549892}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 462462249}
   - component: {fileID: 462462248}
   - component: {fileID: 462462247}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1076,7 +1076,7 @@ GameObject:
   - component: {fileID: 669875370}
   - component: {fileID: 669875369}
   - component: {fileID: 669875368}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4856489047691b545b970eb557e3e7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 10
   rotationSpeed: 10
   isrunning: 0
   isPunching: 0
@@ -1623,7 +1623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1251027085}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1759,7 +1759,7 @@ MonoBehaviour:
   turnSmoothing: 0.1
   minAngle: -20
   maxAngle: 35
-  defaultDistance: 0
+  defaultDistance: 2.8
   offset: {x: 0, y: 2, z: -2.8}
   lockOffset: 0.5
   targetDir: {x: 0, y: 0, z: 0}
@@ -2035,7 +2035,7 @@ GameObject:
   - component: {fileID: 1782748359}
   - component: {fileID: 1782748358}
   - component: {fileID: 1782748357}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2309,7 +2309,7 @@ GameObject:
   - component: {fileID: 1896389351}
   - component: {fileID: 1896389350}
   - component: {fileID: 1896389349}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

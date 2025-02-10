@@ -75,6 +75,12 @@ namespace rhythmhero
             
         }
 
+        private void FixedUpdate()
+        {
+            float dt = Time.fixedDeltaTime;
+            HandleCameraCollision(dt);
+        }
+
 
         void HandleRotations(float d, float v, float h, float targetSpeed)
         {

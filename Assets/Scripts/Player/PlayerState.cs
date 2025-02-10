@@ -43,12 +43,17 @@ namespace rhythmhero
 
             inputDirection = new Vector3(horizontal, 0, vertical).normalized;
 
+            
+            
+            HandlePunch();
+        }
+
+        private void FixedUpdate()
+        {
             if (!isPunching)
             {
                 HandleMovement();
             }
-            
-            HandlePunch();
         }
 
         private void HandleMovement()
