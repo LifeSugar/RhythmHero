@@ -1,3 +1,4 @@
+using rhythmhero.audio;
 using UnityEngine;
 
 namespace rhythmhero
@@ -10,6 +11,11 @@ namespace rhythmhero
         [Header("移动参数")]
         public float moveSpeed = 5f;
         public float rotationSpeed = 10f;
+        
+        // 用来记录上一帧是否在跑动
+        [SerializeField] bool isrunning = false;
+        [SerializeField] private bool isPunching = false;
+        private Vector3 inputDirection;
 
         private void Start()
         {
@@ -32,16 +38,22 @@ namespace rhythmhero
 
         private void Update()
         {
-            HandleMovement();
+            float horizontal = Input.GetAxis("Horizontal"); // A、D 控制左右移动
+            float vertical = Input.GetAxis("Vertical");     // W、S 控制前后移动
+
+            inputDirection = new Vector3(horizontal, 0, vertical).normalized;
+
+            if (!isPunching)
+            {
+                HandleMovement();
+            }
+            
+            HandlePunch();
         }
 
         private void HandleMovement()
         {
-            float horizontal = Input.GetAxis("Horizontal"); // A、D 控制左右移动
-            float vertical = Input.GetAxis("Vertical");     // W、S 控制前后移动
-
-            Vector3 inputDirection = new Vector3(horizontal, 0, vertical).normalized;
-
+            
             if (inputDirection.magnitude >= 0.1f)
             {
                 // 根据摄像机方向计算世界坐标的移动方向
@@ -57,10 +69,54 @@ namespace rhythmhero
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
                 animator.SetBool("isRunning", true);
+                
+                isrunning = true;
             }
             else
             {
+                if (isrunning)
+                {
+                    animator.CrossFade("Idle", 0.4f, 0, BiasCalculator.instance.oneBeatBias / 4f);
+
+                    isrunning = false;
+                }
                 animator.SetBool("isRunning", false);
+                
+            }
+        }
+
+        private void HandlePunch()
+        {
+            // 按空格触发打拳
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                animator.CrossFade("Punching", 0.1f);
+                isPunching = true;
+            }
+
+            // 如果正在打拳，检测何时结束
+            if (isPunching)
+            {
+                // 获取当前动画状态信息
+                AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+                // 如果当前播放的就是“Punching”动画，并且进度（normalizedTime）接近尾声
+                if (stateInfo.IsName("Punching") && stateInfo.normalizedTime >= 0.9f)
+                {
+                    if (inputDirection.magnitude >= 0.1f)
+                    {
+                        animator.CrossFade("Jog", 0.2f);
+                        isPunching = false;  // 重置标记
+                    }
+                    else
+                    {
+                        // 用和移动脚本里一样的逻辑，回到 Idle
+                        animator.CrossFade("Idle", 0.2f, 0, BGMManager.instance.checkerhalf / 4f);
+
+                        isPunching = false;  // 重置标记
+                    }
+                    
+                }
             }
         }
     }

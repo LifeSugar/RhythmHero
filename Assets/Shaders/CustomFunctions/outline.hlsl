@@ -116,6 +116,7 @@ void Outline_float(float2 UV, float edgethickness, float DepthThreshold, float N
           (NormalEdgeStrength * normalEdge); // 不然法线边缘描边
     // Outline = (depthEdge > 0.0) ? (DepthEdgeStrength * depthEdge) : 
     //       (NormalEdgeStrength * normalEdge);
+    
 }
 
 float4 GetColor(float2 UV)
