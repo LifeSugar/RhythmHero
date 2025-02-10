@@ -60,8 +60,10 @@ void Outline_float(float2 UV, float edgethickness, float DepthThreshold, float N
     for (int i = 0; i < 4; i++)
     {
         depths[i] = GetDepth(uv_side[i]);           // 获取相邻像素的深度值
-        depthDifference += depth - depths[i];   // 累积深度差异
+        // depthDifference = max(depthDifference, depths[i]);
+        depthDifference += depth - depths[i];   // 累积深度差异,这里大于0说明更远
     }
+    
 
     // 如果深度差异超过给定的阈值 DepthThreshold，则认为是一个深度边缘（返回 1，否则返回 0）
     float depthEdge = step(DepthThreshold, depthDifference);
@@ -77,16 +79,23 @@ void Outline_float(float2 UV, float edgethickness, float DepthThreshold, float N
     for (int j = 0; j < 4; j++)
     {
         normals[j] = GetNormal(uv_side[j]);           // 获取相邻像素的法线值
-        float3 normalDiff = normal - normals[j];  // 计算法线差异向量
+        if (abs(depths[j] - depth) < 0.001)  // 仅对深度接近的像素进行法线检测
+        {
+            float3 normalDiff = normal - normals[j];  // 计算法线差异向量
         
-        // 计算法线差异与偏置向量的点积，用于检测法线边缘的方向性
-        float normalBiasDiff = dot(normalDiff, NormalEdgeBias);
+            // 计算法线差异与偏置向量的点积，用于检测法线边缘的方向性
+            float normalBiasDiff = dot(normalDiff, NormalEdgeBias);
 
-        // 使用 smoothstep 平滑处理法线差异的边缘响应,防止并不显著的法线边缘存在锯齿或不连续
-        float normalIndicator = smoothstep(-0.01, .01, normalBiasDiff);
+            // 使用 smoothstep 平滑处理法线差异的边缘响应,防止并不显著的法线边缘存在锯齿或不连续
+            float normalIndicator = smoothstep(-0.01, .01, normalBiasDiff);
         
-        // 累积法线差异的平方和，并乘以边缘指示器
-        dotSum += dot(normalDiff, normalDiff) * normalIndicator;
+            // 累积法线差异的平方和，并乘以边缘指示器
+            dotSum += dot(normalDiff, normalDiff) * normalIndicator;
+        }
+
+
+        
+        
     }
 
     // 对累积的法线差异进行平方根处理，得到最终的法线边缘指示值
@@ -102,10 +111,11 @@ void Outline_float(float2 UV, float edgethickness, float DepthThreshold, float N
     // 如果深度差异小于 0，忽略法线边缘并返回 0。
     // 如果深度差异大于阈值，则认为是一个深度边缘并使用 DepthEdgeStrength 强调它；
     // 否则，如果是一个法线边缘，则使用 NormalEdgeStrength 强调它。
-    Outline = (depthDifference < 0) ? 0 :        // 深度差异小于 0，不描边
-          (depthEdge > 0.0) ? (DepthEdgeStrength * depthEdge) :  // 深度边缘描边
-          (NormalEdgeStrength * normalEdge); // 法线边缘描边
-
+    Outline = (depthDifference < 0) ? (NormalEdgeStrength * normalEdge) :        // 深度差异小于 0，不描边
+          (depthEdge > 0.0) ? (DepthEdgeStrength * depthEdge) :  // 如果存在深度边缘则使用深度边缘描边
+          (NormalEdgeStrength * normalEdge); // 不然法线边缘描边
+    // Outline = (depthEdge > 0.0) ? (DepthEdgeStrength * depthEdge) : 
+    //       (NormalEdgeStrength * normalEdge);
 }
 
 float4 GetColor(float2 UV)
