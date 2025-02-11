@@ -202,7 +202,7 @@ MonoBehaviour:
       Data4: 1337535584
     Path: event:/FootSteps
   perfectThreshold: 0.07
-  greatThreshold: 0.12
+  greatThreshold: 0.2
   fadeSpeed: 2
 --- !u!1 &46750128
 GameObject:
