@@ -1,4 +1,4 @@
-using rhythmhero.audio;
+    using rhythmhero.audio;
 using UnityEngine;
 
 namespace rhythmhero
@@ -81,7 +81,7 @@ namespace rhythmhero
             {
                 if (isrunning)
                 {
-                    animator.CrossFade("Idle", 0.4f, 0, BiasCalculator.instance.oneBeatBias / 4f);
+                    // animator.CrossFade("Idle", 0.4f, 0, BiasCalculator.instance.oneBeatBias / 4f);
 
                     isrunning = false;
                 }
