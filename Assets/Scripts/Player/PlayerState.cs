@@ -13,9 +13,16 @@ namespace rhythmhero
         public float rotationSpeed = 10f;
         
         // 用来记录上一帧是否在跑动
-        [SerializeField] bool isrunning = false;
-        [SerializeField] private bool isPunching = false;
+        [SerializeField] private bool isrunning = false;
         private Vector3 inputDirection;
+        
+        [Header("攻击状态")]
+        [SerializeField] bool isAttacking = false;
+        [SerializeField] bool attackOne = false;
+        [SerializeField] bool attackTwo = false;
+        [SerializeField] bool attackThree = false;
+        
+        
 
         private void Start()
         {
@@ -38,27 +45,27 @@ namespace rhythmhero
 
         private void Update()
         {
+            attackOne = animator.GetBool("OnAttackOne");
+            attackTwo = animator.GetBool("OnAttackTwo");
+            attackThree = animator.GetBool("OnAttackThree");
+            isAttacking = attackOne || attackTwo || attackThree;
+            
             float horizontal = Input.GetAxis("Horizontal"); // A、D 控制左右移动
             float vertical = Input.GetAxis("Vertical");     // W、S 控制前后移动
-
             inputDirection = new Vector3(horizontal, 0, vertical).normalized;
-
             
-            
-            HandlePunch();
+            HandleAttack();
         }
 
         private void FixedUpdate()
         {
-            
             HandleMovement();
-            
         }
 
         private void HandleMovement()
         {
-            
-            if (inputDirection.magnitude >= 0.1f)
+            animator.SetBool("isRunning", isrunning);
+            if (inputDirection.magnitude >= 0.1f && !isAttacking)
             {
                 // 根据摄像机方向计算世界坐标的移动方向
                 Vector3 moveDirection = Camera.main.transform.forward * inputDirection.z + Camera.main.transform.right * inputDirection.x;
@@ -72,56 +79,32 @@ namespace rhythmhero
                 Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-                animator.SetBool("isRunning", true);
-                
                 isrunning = true;
             }
             else
             {
-                // if (isrunning)
-                // {
-                //     // animator.CrossFade("Idle", 0.4f, 0, BiasCalculator.instance.oneBeatBias / 4f);
-                //
-                //     isrunning = false;
-                // }
-                animator.SetBool("isRunning", false);
-                
+                isrunning = false;
             }
         }
 
-        private void HandlePunch()
+        private void HandleAttack()
         {
-            // 按空格触发打拳
-            if (Input.GetKeyDown(KeyCode.Space))
+            
+            if (Input.GetMouseButtonDown(0))
             {
-                animator.CrossFade("combo1", 0.1f);
-                isPunching = true;
+                if (!attackOne && !attackTwo && animator.GetCurrentAnimatorStateInfo(4).normalizedTime >= 0.35f)
+                {
+                    animator.CrossFade("combo1", 0.1f);
+                }
+                else if (attackOne && animator.GetCurrentAnimatorStateInfo(4).normalizedTime >= 0.35f)
+                {
+                    animator.CrossFade("combo2", 0.1f);
+                }
+                else if (attackTwo && animator.GetCurrentAnimatorStateInfo(4).normalizedTime >= 0.3f)
+                {
+                    animator.CrossFade("combo3", 0.1f);
+                }
             }
-
-            // // 如果正在打拳，检测何时结束
-            // if (isPunching)
-            // {
-            //     // 获取当前动画状态信息
-            //     AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            //
-            //     // 如果当前播放的就是“Punching”动画，并且进度（normalizedTime）接近尾声
-            //     if (stateInfo.IsName("Punching") && stateInfo.normalizedTime >= 0.9f)
-            //     {
-            //         if (inputDirection.magnitude >= 0.1f)
-            //         {
-            //             animator.CrossFade("Jog", 0.2f);
-            //             isPunching = false;  // 重置标记
-            //         }
-            //         else
-            //         {
-            //             // 用和移动脚本里一样的逻辑，回到 Idle
-            //             animator.CrossFade("Idle", 0.2f, 0, BGMManager.instance.checkerhalf / 4f);
-            //
-            //             isPunching = false;  // 重置标记
-            //         }
-            //         
-            //     }
-            // }
         }
     }
 }

@@ -6,7 +6,11 @@ using rhythmhero.audio;
 
 public class AnimationScript : MonoBehaviour
 {
+    [Header("脚步声")]
     public EventReference stepSound;
+
+    [Header("挥剑")] public EventReference swishSound;
+    public Transform swordPosition;
     
     private Animator animator;
     private Transform playerTransform;
@@ -37,5 +41,10 @@ public class AnimationScript : MonoBehaviour
     public void PlayStepSound()
     {
         AudioManager.instance.PlayOneShot(stepSound, this.transform.parent.transform.position);
+    }
+
+    public void PlaySwishSound()
+    {
+        AudioManager.instance.PlayOneShot(swishSound, this.transform.parent.transform.position);
     }
 }

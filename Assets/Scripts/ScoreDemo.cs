@@ -17,10 +17,10 @@ namespace rhythmhero.UI
         public Text biasText;
 
         [Header("FMOD Events")]
-        public EventReference greatSFX;
-        public EventReference perfectSFX;
-        public EventReference missSFX;
-        
+        // public EventReference greatSFX;
+        // public EventReference perfectSFX;
+        // public EventReference missSFX;
+        //
         [Header("Judgement Thresholds")]
         public float perfectThreshold = 0.02f;
         public float greatThreshold = 0.05f;
@@ -59,17 +59,17 @@ namespace rhythmhero.UI
                 // 2. 根据当前的节拍偏差，决定显示哪一个判定并播放对应音效
                 if (bias < perfectThreshold)
                 {
-                    AudioManager.instance.PlayOneShot(perfectSFX, Camera.main.transform.position);
+                    // AudioManager.instance.PlayOneShot(perfectSFX, Camera.main.transform.position);
                     SetImageAlpha(perfect, 1f);  // 设为不透明（显示出来）
                 }
                 else if (bias < greatThreshold)
                 {
-                    AudioManager.instance.PlayOneShot(greatSFX, Camera.main.transform.position);
+                    // AudioManager.instance.PlayOneShot(greatSFX, Camera.main.transform.position);
                     SetImageAlpha(great, 1f);
                 }
                 else
                 {
-                    AudioManager.instance.PlayOneShot(missSFX, Camera.main.transform.position);
+                    // AudioManager.instance.PlayOneShot(missSFX, Camera.main.transform.position);
                     SetImageAlpha(miss, 1f);
                 }
             }

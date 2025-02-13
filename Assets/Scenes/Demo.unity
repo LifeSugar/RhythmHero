@@ -180,27 +180,6 @@ MonoBehaviour:
   perfect: {fileID: 536816886}
   miss: {fileID: 46750130}
   biasText: {fileID: 498724113}
-  greatSFX:
-    Guid:
-      Data1: 131092996
-      Data2: 1189341781
-      Data3: -2055868738
-      Data4: 1337535584
-    Path: event:/FootSteps
-  perfectSFX:
-    Guid:
-      Data1: 131092996
-      Data2: 1189341781
-      Data3: -2055868738
-      Data4: 1337535584
-    Path: event:/FootSteps
-  missSFX:
-    Guid:
-      Data1: 131092996
-      Data2: 1189341781
-      Data3: -2055868738
-      Data4: 1337535584
-    Path: event:/FootSteps
   perfectThreshold: 0.07
   greatThreshold: 0.2
   fadeSpeed: 2
@@ -1338,10 +1317,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4856489047691b545b970eb557e3e7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 8
   rotationSpeed: 10
   isrunning: 0
-  isPunching: 0
+  isAttacking: 0
+  attackOne: 0
+  attackTwo: 0
+  attackThree: 0
 --- !u!4 &812962314
 Transform:
   m_ObjectHideFlags: 0
@@ -1588,7 +1570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0.9056604, g: 0.8116767, b: 0.8116767, a: 1}
   - {r: 0.8679245, g: 0.61819154, b: 0.8184501, a: 1}
   - {r: 0.990566, g: 0.9641321, b: 0.65881985, a: 1}
 --- !u!4 &904554325 stripped
@@ -1861,7 +1843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11d1d8361cc8e54db9de068f365b027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 20
+  followSpeed: 30
   mouseSpeed: 2
   turnSmoothing: 0.1
   minAngle: -20
@@ -2124,7 +2106,7 @@ Transform:
   m_GameObject: {fileID: 1720573210}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.58, y: -0.171, z: 2.34}
+  m_LocalPosition: {x: -2.58, y: 1.01, z: 2.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2561,6 +2543,14 @@ MonoBehaviour:
       Data3: -2055868738
       Data4: 1337535584
     Path: event:/FootSteps
+  swishSound:
+    Guid:
+      Data1: -553305917
+      Data2: 1221451359
+      Data3: 1620793739
+      Data4: 1921305127
+    Path: event:/SwordSwish
+  swordPosition: {fileID: 896124708}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
