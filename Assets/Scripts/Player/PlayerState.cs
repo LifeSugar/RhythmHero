@@ -50,10 +50,9 @@ namespace rhythmhero
 
         private void FixedUpdate()
         {
-            if (!isPunching)
-            {
-                HandleMovement();
-            }
+            
+            HandleMovement();
+            
         }
 
         private void HandleMovement()
@@ -79,12 +78,12 @@ namespace rhythmhero
             }
             else
             {
-                if (isrunning)
-                {
-                    // animator.CrossFade("Idle", 0.4f, 0, BiasCalculator.instance.oneBeatBias / 4f);
-
-                    isrunning = false;
-                }
+                // if (isrunning)
+                // {
+                //     // animator.CrossFade("Idle", 0.4f, 0, BiasCalculator.instance.oneBeatBias / 4f);
+                //
+                //     isrunning = false;
+                // }
                 animator.SetBool("isRunning", false);
                 
             }
@@ -95,34 +94,34 @@ namespace rhythmhero
             // 按空格触发打拳
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                animator.CrossFade("Punching", 0.1f);
+                animator.CrossFade("combo1", 0.1f);
                 isPunching = true;
             }
 
-            // 如果正在打拳，检测何时结束
-            if (isPunching)
-            {
-                // 获取当前动画状态信息
-                AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-
-                // 如果当前播放的就是“Punching”动画，并且进度（normalizedTime）接近尾声
-                if (stateInfo.IsName("Punching") && stateInfo.normalizedTime >= 0.9f)
-                {
-                    if (inputDirection.magnitude >= 0.1f)
-                    {
-                        animator.CrossFade("Jog", 0.2f);
-                        isPunching = false;  // 重置标记
-                    }
-                    else
-                    {
-                        // 用和移动脚本里一样的逻辑，回到 Idle
-                        animator.CrossFade("Idle", 0.2f, 0, BGMManager.instance.checkerhalf / 4f);
-
-                        isPunching = false;  // 重置标记
-                    }
-                    
-                }
-            }
+            // // 如果正在打拳，检测何时结束
+            // if (isPunching)
+            // {
+            //     // 获取当前动画状态信息
+            //     AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            //
+            //     // 如果当前播放的就是“Punching”动画，并且进度（normalizedTime）接近尾声
+            //     if (stateInfo.IsName("Punching") && stateInfo.normalizedTime >= 0.9f)
+            //     {
+            //         if (inputDirection.magnitude >= 0.1f)
+            //         {
+            //             animator.CrossFade("Jog", 0.2f);
+            //             isPunching = false;  // 重置标记
+            //         }
+            //         else
+            //         {
+            //             // 用和移动脚本里一样的逻辑，回到 Idle
+            //             animator.CrossFade("Idle", 0.2f, 0, BGMManager.instance.checkerhalf / 4f);
+            //
+            //             isPunching = false;  // 重置标记
+            //         }
+            //         
+            //     }
+            // }
         }
     }
 }
