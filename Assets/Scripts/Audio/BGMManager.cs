@@ -16,6 +16,9 @@ namespace rhythmhero.audio
 
         // FMOD 实例列表，对应 bgms
         public List<EventInstance> bgmInstances = new List<EventInstance>();
+        
+        //BGM Position
+        public List<Transform> bgmTransforms = new List<Transform>();
 
         // 计时器
         public float timer;
@@ -45,7 +48,7 @@ namespace rhythmhero.audio
 
         void Start()
         {
-            // 初始化 BGM 实例（假设在 AudioManager 中已经定义了初始化逻辑）
+            // 初始化 BGM 实例
             AudioManager.instance.InitializeBGMInstance();
         }
 

@@ -45,6 +45,6 @@ public class AnimationScript : MonoBehaviour
 
     public void PlaySwishSound()
     {
-        AudioManager.instance.PlayOneShot(swishSound, this.transform.parent.transform.position);
+        AudioManager.instance.PlayOneShot(swishSound, swordPosition.position);
     }
 }
