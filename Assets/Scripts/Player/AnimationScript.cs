@@ -11,6 +11,8 @@ public class AnimationScript : MonoBehaviour
 
     [Header("挥剑")] public EventReference swishSound;
     public Transform swordPosition;
+
+    [Header("特效")] public ParticleSystem slash1;
     
     private Animator animator;
     private Transform playerTransform;
@@ -46,5 +48,10 @@ public class AnimationScript : MonoBehaviour
     public void PlaySwishSound()
     {
         AudioManager.instance.PlayOneShot(swishSound, swordPosition.position);
+    }
+
+    public void EmitSlahFX()
+    {
+        slash1.Play();
     }
 }
