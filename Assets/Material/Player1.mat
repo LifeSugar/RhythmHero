@@ -108,7 +108,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AdditionalLightLevels: 4
+    - _AdditionalLightLevels: 1
     - _AddtionalLightAtten: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
@@ -133,7 +133,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _MainLightLevels: 3.73
+    - _MainLightLevels: 1
     - _Metallic: 0
     - _MiniDarkness: 0.1
     - _NormalEdgeStrength: 1.03
