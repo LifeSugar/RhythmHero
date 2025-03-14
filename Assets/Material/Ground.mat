@@ -163,6 +163,11 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
+    - _alpha: 1
+    - _saturation: 1
+    - _spacular: 0
+    - _spacularStrength: 0.24
+    - _spaculardissovle: 32.21
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -172,4 +177,5 @@ Material:
     - _OutlineColor: {r: 0.25157225, g: 0.25157225, b: 0.25157225, a: 0}
     - _ShadowColor: {r: 0.22040263, g: 0.28796837, b: 0.35220122, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _spacularcolor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
