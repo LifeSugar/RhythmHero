@@ -45,8 +45,8 @@
         "**/*.unity": true,
         "build/": true,
         "Build/": true,
-        "Library/": true,
-        "library/": true,
+        // "Library/": true,
+        // "library/": true,
         "obj/": true,
         "Obj/": true,
         "Logs/": true,
@@ -56,5 +56,27 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "RhythmHero.sln"
+
+    
+    "dotnet.defaultSolution": "RhythmHero.sln",
+
+    // —— 新增这三块 —— 
+    "files.associations": {
+        "*.shader": "shaderlab",
+        "*.cginc": "hlsl",
+        "*.hlsl": "hlsl"
+    },
+
+    "shaderlab.includePaths": [
+        "${workspaceFolder}/Library/PackageCache/**/ShaderLibrary"
+    ],
+    "hlsl.includePaths": [
+        "${workspaceFolder}/Library/PackageCache/**/ShaderLibrary"
+    ],
+    "hlsl.includeDirs": [
+        "${workspaceFolder}/Library/PackageCache/**/ShaderLibrary"
+    ],
+
+    // （可选）开启引用校验
+    "shaderlab.validateReferences": true
 }

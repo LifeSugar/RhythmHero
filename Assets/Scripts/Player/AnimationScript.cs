@@ -13,6 +13,8 @@ public class AnimationScript : MonoBehaviour
     public Transform swordPosition;
 
     [Header("特效")] public ParticleSystem slash1;
+    public ParticleSystem slash2;
+    public ParticleSystem slash3;
 
     private Animator animator;
     private Transform playerTransform;
@@ -68,8 +70,23 @@ public class AnimationScript : MonoBehaviour
         AudioManager.instance.PlayOneShot(swishSound, swordPosition.position);
     }
 
-    public void EmitSlahFX()
+    public void EmitSlahFXslah1()
     {
+        AudioManager.instance.PlayOneShot(swishSound, swordPosition.position);
         slash1.Play();
     }
+
+    public void EmitSlahFXslah2()
+    {
+        AudioManager.instance.PlayOneShot(swishSound, swordPosition.position);
+        slash2.Play();
+    }
+
+    public void EmitSlahFXslah3()
+    {
+        AudioManager.instance.PlayOneShot(swishSound, swordPosition.position);
+        slash3.Play();
+    }
+    
+    
 }
