@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d0aaf759-6f81-4b4b-b811-f830924e3484}">
+		<property name="assetPath">
+			<value>1 2-ESM_Iconic_Origins_Hip_Hop_Drums_2_Sound_Effect_5 [2025-02-26 132846].wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>32</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50f1fba5-c29c-417d-943d-013c511399b3}</destination>
+		</relationship>
+	</object>
+</objects>

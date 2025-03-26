@@ -332,6 +332,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - AnimalBand
   - BGM
   - SFX
   BanksToLoad: []

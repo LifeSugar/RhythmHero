@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{cd8ef949-abc2-4a8a-a8c0-c18b2e80dd98}">
+		<property name="name">
+			<value>SnakeOn</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f2f0b7fd-66c7-4037-be32-c7b7d10e0553}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{01342c35-d4d0-4c50-82d3-1d517aee1830}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{01342c35-d4d0-4c50-82d3-1d517aee1830}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
