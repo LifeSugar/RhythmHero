@@ -24,7 +24,7 @@ Shader "Custom/vfx/slash"
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // #pragma multi_compile_fog
+            #pragma multi_compile_fog
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/ShaderVariablesFunctions.hlsl"
