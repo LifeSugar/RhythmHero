@@ -331,9 +331,13 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
+  - Desktop/Master
   Banks:
   - AnimalBand
   - BGM
+  - Desktop/AnimalBand
+  - Desktop/BGM
+  - Desktop/SFX
   - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
