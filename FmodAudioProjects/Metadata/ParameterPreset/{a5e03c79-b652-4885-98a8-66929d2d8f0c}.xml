@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{a5e03c79-b652-4885-98a8-66929d2d8f0c}">
+		<property name="name">
+			<value>BirdOn</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f2f0b7fd-66c7-4037-be32-c7b7d10e0553}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ab0015d9-6993-462a-82ad-d005b9cb3681}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ab0015d9-6993-462a-82ad-d005b9cb3681}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
