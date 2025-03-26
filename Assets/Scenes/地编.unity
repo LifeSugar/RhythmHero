@@ -47169,6 +47169,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 161071809815390414, guid: 686ba7fd9c3dc0248be22595b6892a27,
+        type: 3}
+      propertyPath: bgms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 161071809815390414, guid: 686ba7fd9c3dc0248be22595b6892a27,
+        type: 3}
+      propertyPath: bgms.Array.data[1].Path
+      value: event:/TestBGM
+      objectReference: {fileID: 0}
+    - target: {fileID: 161071809815390414, guid: 686ba7fd9c3dc0248be22595b6892a27,
+        type: 3}
+      propertyPath: bgms.Array.data[1].Guid.Data1
+      value: -92453884
+      objectReference: {fileID: 0}
+    - target: {fileID: 161071809815390414, guid: 686ba7fd9c3dc0248be22595b6892a27,
+        type: 3}
+      propertyPath: bgms.Array.data[1].Guid.Data2
+      value: 1190651826
+      objectReference: {fileID: 0}
+    - target: {fileID: 161071809815390414, guid: 686ba7fd9c3dc0248be22595b6892a27,
+        type: 3}
+      propertyPath: bgms.Array.data[1].Guid.Data3
+      value: 290143129
+      objectReference: {fileID: 0}
+    - target: {fileID: 161071809815390414, guid: 686ba7fd9c3dc0248be22595b6892a27,
+        type: 3}
+      propertyPath: bgms.Array.data[1].Guid.Data4
+      value: -1759173196
+      objectReference: {fileID: 0}
     - target: {fileID: 788984254957218832, guid: 686ba7fd9c3dc0248be22595b6892a27,
         type: 3}
       propertyPath: m_Name

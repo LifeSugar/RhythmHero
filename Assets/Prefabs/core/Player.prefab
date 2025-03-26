@@ -416,6 +416,11 @@ PrefabInstance:
       propertyPath: swordPosition
       value: 
       objectReference: {fileID: 1627195457154538744}
+    - target: {fileID: 6224887980808142016, guid: b519e1d71d503fd4594dc9f2ae5f9d19,
+        type: 3}
+      propertyPath: stepSound.Path
+      value: event:/Scene1/FootSteps
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
