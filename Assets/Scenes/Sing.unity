@@ -15354,7 +15354,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356f508bcad617f449257240ef81bc32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fmodEventPath: event:/AnimalBand
+  fmodEvent:
+    Guid:
+      Data1: 1505639729
+      Data2: 1125978755
+      Data3: 1825345452
+      Data4: -1699842357
+    Path: event:/AnimalBand
 --- !u!4 &2015207688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 644027910916855787, guid: 8cb75dc2fdd63734988b8358f1314d25,
