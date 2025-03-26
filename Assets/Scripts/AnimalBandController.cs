@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 public class AnimalBandController : MonoBehaviour
 {
-    [FMODUnity.EventRef]
-    public string fmodEventPath = "event:/AnimalBand";
+    public EventReference fmodEvent;
+
 
     private FMOD.Studio.EventInstance musicInstance;
 
@@ -15,9 +15,10 @@ public class AnimalBandController : MonoBehaviour
 
     void Start()
     {
-        musicInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEventPath);
+        musicInstance = RuntimeManager.CreateInstance(fmodEvent);
+
         musicInstance.start();
-        Debug.Log("🎵 FMOD 音乐启动成功");
+        Debug.Log(" FMOD 音乐启动成功");
     }
 
     public void SwitchToTrack(string trackName)
@@ -27,7 +28,7 @@ public class AnimalBandController : MonoBehaviour
             musicInstance.setParameterByName(track, track == trackName ? 1f : 0f);
         }
 
-        Debug.Log($"✅ 当前播放轨道: {trackName}");
+        Debug.Log("2");
         currentTrack = trackName;
     }
 
@@ -54,7 +55,7 @@ public class AnimalBandController : MonoBehaviour
             musicInstance.setParameterByName(selected, 1f);
         }
 
-        Debug.Log($"🎵 Slot {slotIndex} 选择了: {trackName}");
+        Debug.Log($" Slot {slotIndex} 选择了: {trackName}");
 
         if (selectedTracks.Count == 4)
         {
