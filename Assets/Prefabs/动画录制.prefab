@@ -73,7 +73,7 @@ MonoBehaviour:
       Data2: 1189341781
       Data3: -2055868738
       Data4: 1337535584
-    Path: event:/FootSteps
+    Path: event:/Scene1/FootSteps
   swishSound:
     Guid:
       Data1: -553305917
@@ -83,6 +83,8 @@ MonoBehaviour:
     Path: event:/SwordSwish
   swordPosition: {fileID: 0}
   slash1: {fileID: 0}
+  slash2: {fileID: 0}
+  slash3: {fileID: 0}
 --- !u!1001 &152258377619435540
 PrefabInstance:
   m_ObjectHideFlags: 0

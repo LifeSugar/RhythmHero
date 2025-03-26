@@ -167,7 +167,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: faea0f5517669764a81b7c7048ba1aa8,
         type: 3}
       propertyPath: m_Name
-      value: Character
+      value: Humanoid
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: faea0f5517669764a81b7c7048ba1aa8,
         type: 3}
@@ -259,7 +259,7 @@ MonoBehaviour:
       Data2: 1189341781
       Data3: -2055868738
       Data4: 1337535584
-    Path: event:/FootSteps
+    Path: event:/Scene1/FootSteps
   swishSound:
     Guid:
       Data1: -553305917
@@ -268,3 +268,6 @@ MonoBehaviour:
       Data4: 1921305127
     Path: event:/SwordSwish
   swordPosition: {fileID: 859482633425161892}
+  slash1: {fileID: 0}
+  slash2: {fileID: 0}
+  slash3: {fileID: 0}
