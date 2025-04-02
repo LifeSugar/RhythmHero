@@ -5957,6 +5957,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013439273480, guid: 550304d844d007f4ab9f3a8e96d8352e, type: 3}
+      propertyPath: m_Name
+      value: Fire1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013773704040, guid: 550304d844d007f4ab9f3a8e96d8352e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5989,7 +5993,13 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 199000010065307056, guid: 550304d844d007f4ab9f3a8e96d8352e,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114000012262783352, guid: 550304d844d007f4ab9f3a8e96d8352e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -6092,6 +6102,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1108927596}
     m_Modifications:
+    - target: {fileID: 104384, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
+      propertyPath: m_Name
+      value: Fire3
+      objectReference: {fileID: 0}
     - target: {fileID: 441344, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
       propertyPath: m_RootOrder
       value: 89
@@ -6107,6 +6121,10 @@ PrefabInstance:
     - target: {fileID: 441344, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
       propertyPath: m_LocalPosition.z
       value: -2.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 19946032, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000011151274314, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6156,7 +6174,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11401476, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -6864,6 +6883,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorchBig
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013439273480, guid: 550304d844d007f4ab9f3a8e96d8352e, type: 3}
+      propertyPath: m_Name
+      value: Fire5
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013773704040, guid: 550304d844d007f4ab9f3a8e96d8352e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.093994
@@ -6904,7 +6927,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 199000010065307056, guid: 550304d844d007f4ab9f3a8e96d8352e,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114000012262783352, guid: 550304d844d007f4ab9f3a8e96d8352e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -7836,6 +7865,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013439273480, guid: 550304d844d007f4ab9f3a8e96d8352e, type: 3}
+      propertyPath: m_Name
+      value: Fire4
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013773704040, guid: 550304d844d007f4ab9f3a8e96d8352e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7868,7 +7901,13 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 199000010065307056, guid: 550304d844d007f4ab9f3a8e96d8352e,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114000012262783352, guid: 550304d844d007f4ab9f3a8e96d8352e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -34172,7 +34211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 406698, guid: ce497167c6649a14481c843b5b3273a7, type: 3}
       propertyPath: m_LocalScale.z
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 406698, guid: ce497167c6649a14481c843b5b3273a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45719,6 +45758,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -5.28
       objectReference: {fileID: 0}
+    - target: {fileID: 10883958, guid: a0df47329a427514e90f8a03566796f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 19808390, guid: a0df47329a427514e90f8a03566796f6, type: 3}
       propertyPath: randomSeed
       value: 1324827264
@@ -45726,6 +45769,14 @@ PrefabInstance:
     - target: {fileID: 19822644, guid: a0df47329a427514e90f8a03566796f6, type: 3}
       propertyPath: randomSeed
       value: -1561917312
+      objectReference: {fileID: 0}
+    - target: {fileID: 19912900, guid: a0df47329a427514e90f8a03566796f6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19917254, guid: a0df47329a427514e90f8a03566796f6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000010333678864, guid: a0df47329a427514e90f8a03566796f6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -45788,11 +45839,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 185562, guid: a0df47329a427514e90f8a03566796f6,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1914352496}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0df47329a427514e90f8a03566796f6, type: 3}
 --- !u!4 &1914352494 stripped
 Transform:
@@ -45800,35 +45847,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1914352493}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1914352495 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 185562, guid: a0df47329a427514e90f8a03566796f6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1914352493}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1914352496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914352495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
 --- !u!1001 &1919175228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51828,6 +51846,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1108927596}
     m_Modifications:
+    - target: {fileID: 104384, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
+      propertyPath: m_Name
+      value: Fire2
+      objectReference: {fileID: 0}
     - target: {fileID: 441344, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -51843,6 +51865,10 @@ PrefabInstance:
     - target: {fileID: 441344, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 29.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 19946032, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000011151274314, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -51892,7 +51918,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11401476, guid: b86c6f6b9c3047546b5bd02193442d2d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
