@@ -22,6 +22,12 @@ namespace rhythmhero
         [SerializeField] bool attackTwo = false;
         [SerializeField] bool attackThree = false;
         
+        public static PlayerState instance;
+
+        void Awake()
+        {
+            instance = this;
+        }
         
 
         private void Start()
@@ -43,7 +49,7 @@ namespace rhythmhero
             }
         }
 
-        private void Update()
+        public void Tick()
         {
             attackOne = animator.GetBool("OnAttackOne");
             attackTwo = animator.GetBool("OnAttackTwo");
@@ -55,9 +61,11 @@ namespace rhythmhero
             inputDirection = new Vector3(horizontal, 0, vertical).normalized;
             
             HandleAttack();
+            
+            FogRenderFeature.instance.SetupPlayerPos(this.transform.position);
         }
 
-        private void FixedUpdate()
+        public void FixedTick()
         {
             HandleMovement();
         }

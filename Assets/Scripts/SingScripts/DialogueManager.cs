@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class DialogueLine
@@ -16,23 +17,42 @@ public class DialogueLine
 public class DialogueData : ScriptableObject
 {
     public List<DialogueLine> lines;
+    
 }
 
 public class DialogueManager : MonoBehaviour
 {
-    public DialogueData dialogueData;
+    public DialogueData dialogueData1; //????????dialogueData??????? 
+
+    public DialogueData currentData; //??????????dialogueData???currentData??????????????
+    private int currentLineIndex = 0;
+    private bool isDialogueActive = false;
+    
+    
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI characterName;
     public Image characterPortrait;
     public GameObject dialoguePanel;
-    public GameObject endDialoguePanel; // 结束对话后显示的 UI 面板
+    public GameObject endDialoguePanel; 
 
-    private int currentLineIndex = 0;
-    private bool isDialogueActive = false;
+    
+    
+    public static DialogueManager instance;
+
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Debug.LogError("More than one instance of DialogueManager");
+        }
+        
+        instance = this;
+    }
 
     void Start()
     {
-        StartDialogue();
+        // StartDialogue(); 
+        dialoguePanel.SetActive(false);
     }
 
     void Update()
@@ -43,13 +63,23 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    //???????Game Manager???????
+    
+    public void Tick()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        {
+            NextDialogueLine();
+        }
+    }
+
     void StartDialogue()
     {
-        if (dialogueData.lines.Count > 0)
+        if (currentData.lines.Count > 0)
         {
             isDialogueActive = true;
             dialoguePanel.SetActive(true);
-            endDialoguePanel.SetActive(false); // 确保开始对话时结束面板隐藏
+            endDialoguePanel.SetActive(false); 
             currentLineIndex = 0;
             ShowLine();
         }
@@ -58,7 +88,7 @@ public class DialogueManager : MonoBehaviour
     void NextDialogueLine()
     {
         currentLineIndex++;
-        if (currentLineIndex < dialogueData.lines.Count)
+        if (currentLineIndex < currentData.lines.Count)
         {
             ShowLine();
         }
@@ -70,7 +100,7 @@ public class DialogueManager : MonoBehaviour
 
     void ShowLine()
     {
-        DialogueLine line = dialogueData.lines[currentLineIndex];
+        DialogueLine line = currentData.lines[currentLineIndex];
         characterName.text = line.characterName;
         characterPortrait.sprite = line.characterPortrait;
         dialogueText.text = line.dialogueText;
@@ -80,6 +110,6 @@ public class DialogueManager : MonoBehaviour
     {
         isDialogueActive = false;
         dialoguePanel.SetActive(false);
-        endDialoguePanel.SetActive(true); // 显示结束对话的 UI 面板
+        endDialoguePanel.SetActive(true); // ?????????????????UI? ???DialogueData????????bool??????currentData????????????
     }
 }
