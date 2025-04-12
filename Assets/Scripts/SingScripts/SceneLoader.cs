@@ -1,12 +1,12 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
-public class SceneLoader : MonoBehaviour
-{
-    // ¸Ãº¯Êý½«ÔÚ°´Å¥µã»÷ºóµ÷ÓÃ
-    public void LoadNextScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-}
-
+// using UnityEngine;
+// using UnityEngine.SceneManagement;
+//
+// public class SceneLoader : MonoBehaviour
+// {
+//     // ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//     public void LoadNextScene(string sceneName)
+//     {
+//         SceneManager.LoadScene(sceneName);
+//     }
+// }
+//

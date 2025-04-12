@@ -814,10 +814,23 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: STEAMAUDIO_ENABLED
-    Standalone: UNITY_PIPELINE_URP;STEAMAUDIO_ENABLED
-    WebGL: STEAMAUDIO_ENABLED
-    iPhone: STEAMAUDIO_ENABLED
+    Android: STEAMAUDIO_ENABLED;DOTWEEN
+    EmbeddedLinux: DOTWEEN
+    GameCoreScarlett: DOTWEEN
+    GameCoreXboxOne: DOTWEEN
+    LinuxHeadlessSimulation: DOTWEEN
+    Nintendo Switch: DOTWEEN
+    PS4: DOTWEEN
+    PS5: DOTWEEN
+    QNX: DOTWEEN
+    Stadia: DOTWEEN
+    Standalone: UNITY_PIPELINE_URP;STEAMAUDIO_ENABLED;DOTWEEN
+    VisionOS: DOTWEEN
+    WebGL: STEAMAUDIO_ENABLED;DOTWEEN
+    Windows Store Apps: DOTWEEN
+    XboxOne: DOTWEEN
+    iPhone: STEAMAUDIO_ENABLED;DOTWEEN
+    tvOS: DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

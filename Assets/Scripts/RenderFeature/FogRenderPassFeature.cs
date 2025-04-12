@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
-using rhythmhero;
+
 
 public class FogRenderFeature : ScriptableRendererFeature
 {
@@ -18,6 +18,8 @@ public class FogRenderFeature : ScriptableRendererFeature
         public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
         [Tooltip("玩家的位置，传入shader实时更新雾气的中心")]
         public Vector4 playerPos = new Vector4(0, 0, 0, 0);
+        [Tooltip("传入雾气范围")]
+        public float fogDensity = 30.0f;
     }
     
     public static FogRenderFeature instance;
@@ -28,6 +30,11 @@ public class FogRenderFeature : ScriptableRendererFeature
         this.settings.playerPos = new Vector4(playerPos.x, playerPos.y, playerPos.z, 0);
     }
 
+    public void SetupFogIntensity(float fogDensity)
+    {
+        this.settings.fogDensity = fogDensity;
+    }
+
     
 
     class FogRenderPass : ScriptableRenderPass
@@ -35,6 +42,7 @@ public class FogRenderFeature : ScriptableRendererFeature
         public Material FogMaterial = null;
         public RenderTexture tilemapRenderTexture = null;
         public Vector4 playerPos = new Vector4(0, 0, 0, 0);
+        public float fogDensity = 30.0f;
         private RenderTargetHandle temporaryColorTexture;
 
         public FogRenderPass()
@@ -52,6 +60,7 @@ public class FogRenderFeature : ScriptableRendererFeature
             
             
             FogMaterial.SetVector("_CenterPos", playerPos);
+            FogMaterial.SetFloat("_FadeRange", fogDensity);
 
             // 在 Execute 中获取摄像机的颜色目标
             RenderTargetIdentifier source = renderingData.cameraData.renderer.cameraColorTarget;
@@ -72,6 +81,7 @@ public class FogRenderFeature : ScriptableRendererFeature
         m_ScriptablePass.tilemapRenderTexture = settings.tilemapRenderTexture;
         m_ScriptablePass.renderPassEvent = settings.renderPassEvent;
         m_ScriptablePass.playerPos = settings.playerPos;
+        m_ScriptablePass.fogDensity = settings.fogDensity;
         instance = this;
     }
 
@@ -87,6 +97,7 @@ public class FogRenderFeature : ScriptableRendererFeature
             return;
         
         m_ScriptablePass.playerPos = settings.playerPos;
+        m_ScriptablePass.fogDensity = settings.fogDensity;
         // Debug.Log("Before update: settings.playerPos = " + settings.playerPos);
         renderer.EnqueuePass(m_ScriptablePass);
     }
