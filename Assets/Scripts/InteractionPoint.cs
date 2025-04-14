@@ -60,7 +60,7 @@ namespace rhythmhero
         {
             if (Input.GetKeyDown(KeyCode.E) && !hasInteracted)
             {
-                Debug.Log("dfjkdjfdklf");
+                // Debug.Log("dfjkdjfdklf");
                 //--------这些是点击瞬间发生的事情
                 hasInteracted = true; //标记为已经交互过
                 InteractionUI.gameObject.SetActive(false);
@@ -70,6 +70,8 @@ namespace rhythmhero
                 
                 GameManager.instance.currentInteractionPoint = this.gameObject;//标记正在交互
                 AudioManager.instance.PlayOneShot(interactEvent,this.transform.position); //播放一次点击音效
+                
+                
                 Ghost.instance.FlowUpGhost();//让小幽灵飘起来并开启对话，开启对话的逻辑由小幽灵那边开启。
                 GameManager.instance.gameState = GameState.InDialogue; //此时将游戏的状态切换为InDialogue
             }

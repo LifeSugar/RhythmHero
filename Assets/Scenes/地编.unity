@@ -53178,6 +53178,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2112081373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2120745688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2120745690}
+  - component: {fileID: 2120745689}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &2120745689
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120745688}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.5105371
+  m_Center: {x: 1.0105371, y: 0, z: 0}
+--- !u!4 &2120745690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120745688}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.61, y: -0.3924396, z: -27.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2123790540
 GameObject:
   m_ObjectHideFlags: 0
@@ -59783,6 +59836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8609159390909473659, guid: 4c025cea2b4b11c4a84b6f30ec9c6579,
         type: 3}
+      propertyPath: voice.Path
+      value: event:/SwordSwish
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609159390909473659, guid: 4c025cea2b4b11c4a84b6f30ec9c6579,
+        type: 3}
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 385990542}
@@ -59801,6 +59859,31 @@ PrefabInstance:
       propertyPath: endDialoguePanel
       value: 
       objectReference: {fileID: 2062477847691995207}
+    - target: {fileID: 8609159390909473659, guid: 4c025cea2b4b11c4a84b6f30ec9c6579,
+        type: 3}
+      propertyPath: periodicInterval
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609159390909473659, guid: 4c025cea2b4b11c4a84b6f30ec9c6579,
+        type: 3}
+      propertyPath: voice.Guid.Data1
+      value: -553305917
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609159390909473659, guid: 4c025cea2b4b11c4a84b6f30ec9c6579,
+        type: 3}
+      propertyPath: voice.Guid.Data2
+      value: 1221451359
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609159390909473659, guid: 4c025cea2b4b11c4a84b6f30ec9c6579,
+        type: 3}
+      propertyPath: voice.Guid.Data3
+      value: 1620793739
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609159390909473659, guid: 4c025cea2b4b11c4a84b6f30ec9c6579,
+        type: 3}
+      propertyPath: voice.Guid.Data4
+      value: 1921305127
+      objectReference: {fileID: 0}
     - target: {fileID: 8609159390909473659, guid: 4c025cea2b4b11c4a84b6f30ec9c6579,
         type: 3}
       propertyPath: characterPortrait
@@ -89427,3 +89510,4 @@ SceneRoots:
   - {fileID: 501509792}
   - {fileID: 1634065609}
   - {fileID: 7071723383151130252}
+  - {fileID: 2120745690}

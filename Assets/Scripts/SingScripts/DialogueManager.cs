@@ -46,6 +46,8 @@ public class DialogueManager : MonoBehaviour
     [Header("小动物的声音")] 
     public EventReference voice;
 
+    public EventReference monkeyvoice;
+
     // 单例模式，方便其他脚本通过 DialogueManager.instance 来访问
     public static DialogueManager instance;
 
@@ -195,6 +197,10 @@ public class DialogueManager : MonoBehaviour
     {
         //这里还可以根据currentData.line.charactorname来判断是哪个角色，播放不同的音效
         AudioManager.instance.PlayOneShot(voice, Camera.main.transform.position);
+        if (currentData.lines[currentLineIndex].characterName != "monkey")
+        {
+            AudioManager.instance.PlayOneShot(monkeyvoice, Camera.main.transform.position);
+        }
     }
 
     /// <summary>

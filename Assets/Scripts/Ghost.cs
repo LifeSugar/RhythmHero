@@ -29,7 +29,7 @@ namespace rhythmhero
         {
             
             // 计算目标位置：当前 Y 坐标 + 5
-            float targetY = transform.position.y + 2f;
+            float targetY = transform.position.y + 3.5f;
             var targetPos = new Vector3(transform.position.x, targetY, transform.position.z);
             if (!flowUpSound.IsNull)
             {

@@ -24,7 +24,7 @@ MonoBehaviour:
   - characterName: Ghost
     characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
       type: 3}
-    dialogueText: hello
+    dialogueText: hello,dfdlkgajfkgjfldjfakl;djklg;jakl;jgkl;sfjg;klfj;g
   - characterName: Ghost
     characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
       type: 3}

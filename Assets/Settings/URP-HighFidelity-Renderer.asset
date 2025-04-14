@@ -129,5 +129,5 @@ MonoBehaviour:
     fogMaterial: {fileID: 2100000, guid: 1d3dc7956712bf949bc16ef9775d8b64, type: 2}
     tilemapRenderTexture: {fileID: 0}
     renderPassEvent: 500
-    playerPos: {x: -15.690335, y: 0.057443142, z: -41.98285, w: 0}
-    fogDensity: 1000
+    playerPos: {x: -20.39939, y: 0.00068700314, z: -23.954777, w: 0}
+    fogDensity: 30
