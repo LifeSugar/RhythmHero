@@ -1559,14 +1559,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
+      - m_Target: {fileID: 1960311174}
+        m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+        m_MethodName: SetTrack
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1783,7 +1783,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 132523929}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &132523929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2671,7 +2683,6 @@ GameObject:
   - component: {fileID: 233001234}
   - component: {fileID: 233001233}
   - component: {fileID: 233001232}
-  - component: {fileID: 233001235}
   m_Layer: 5
   m_Name: emotion1
   m_TagString: Untagged
@@ -2743,14 +2754,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 233001235}
-        m_TargetAssemblyTypeName: AnimalButton, Assembly-CSharp
-        m_MethodName: SelectTrack
-        m_Mode: 1
+      - m_Target: {fileID: 1960311174}
+        m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+        m_MethodName: SetTrack
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2793,21 +2804,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233001230}
   m_CullTransparentMesh: 1
---- !u!114 &233001235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233001230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 432a27e1e36e8f04d82484b4ceb39f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotIndex: 1
-  trackName: MouseOn
-  controller: {fileID: 1960311174}
 --- !u!1 &238259742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,7 +2861,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sad
+  m_text: snake
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3366,14 +3362,13 @@ GameObject:
   - component: {fileID: 267270777}
   - component: {fileID: 267270776}
   - component: {fileID: 267270775}
-  - component: {fileID: 267270779}
   m_Layer: 5
   m_Name: emotion3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &267270775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3418,14 +3413,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 267270779}
-        m_TargetAssemblyTypeName: AnimalButton, Assembly-CSharp
-        m_MethodName: SelectTrack
-        m_Mode: 1
+      - m_Target: {fileID: 1960311174}
+        m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+        m_MethodName: SetTrack
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3488,21 +3483,6 @@ RectTransform:
   m_AnchoredPosition: {x: 498, y: 112.999985}
   m_SizeDelta: {x: 168, y: 226}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &267270779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267270774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 432a27e1e36e8f04d82484b4ceb39f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotIndex: 3
-  trackName: SnakeOn
-  controller: {fileID: 1960311174}
 --- !u!1 &278625042
 GameObject:
   m_ObjectHideFlags: 0
@@ -4013,7 +3993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Happy
+  m_text: SNAKE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6841,14 +6821,13 @@ GameObject:
   - component: {fileID: 695611748}
   - component: {fileID: 695611747}
   - component: {fileID: 695611746}
-  - component: {fileID: 695611750}
   m_Layer: 5
   m_Name: emotion2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &695611746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6893,14 +6872,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 695611750}
-        m_TargetAssemblyTypeName: AnimalButton, Assembly-CSharp
-        m_MethodName: SelectTrack
-        m_Mode: 1
+      - m_Target: {fileID: 1960311174}
+        m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+        m_MethodName: SetTrack
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6963,21 +6942,6 @@ RectTransform:
   m_AnchoredPosition: {x: 291.40002, y: 112.999985}
   m_SizeDelta: {x: 168, y: 226}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &695611750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695611745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 432a27e1e36e8f04d82484b4ceb39f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotIndex: 2
-  trackName: BirdOn
-  controller: {fileID: 1960311174}
 --- !u!1001 &706147022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9132,7 +9096,6 @@ GameObject:
   - component: {fileID: 1014021294}
   - component: {fileID: 1014021293}
   - component: {fileID: 1014021292}
-  - component: {fileID: 1014021295}
   m_Layer: 5
   m_Name: emotion1
   m_TagString: Untagged
@@ -9204,14 +9167,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1014021295}
-        m_TargetAssemblyTypeName: AnimalButton, Assembly-CSharp
-        m_MethodName: SelectTrack
-        m_Mode: 1
+      - m_Target: {fileID: 1960311174}
+        m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+        m_MethodName: SetTrack
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9254,21 +9217,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014021290}
   m_CullTransparentMesh: 1
---- !u!114 &1014021295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1014021290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 432a27e1e36e8f04d82484b4ceb39f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotIndex: 2
-  trackName: BirdOn
-  controller: {fileID: 1960311174}
 --- !u!1 &1015121558
 GameObject:
   m_ObjectHideFlags: 0
@@ -9584,14 +9532,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
+      - m_Target: {fileID: 1960311174}
+        m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+        m_MethodName: SetTrack
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10604,7 +10552,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Happy
+  m_text: bird
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12847,7 +12795,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: clam
+  m_text: monkey
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13875,7 +13823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: clam
+  m_text: monkey
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14101,7 +14049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sad
+  m_text: bird
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15321,7 +15269,7 @@ GameObject:
   - component: {fileID: 1960311173}
   - component: {fileID: 1960311174}
   m_Layer: 0
-  m_Name: MusicManager
+  m_Name: FMODManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15351,16 +15299,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1960311172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356f508bcad617f449257240ef81bc32, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e3b84f5a1126ac4aace344bcb954f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fmodEvent:
+  animalConcertEvent:
     Guid:
-      Data1: 1505639729
-      Data2: 1125978755
-      Data3: 1825345452
-      Data4: -1699842357
-    Path: event:/AnimalBand
+      Data1: 1054537688
+      Data2: 1283278957
+      Data3: 604252822
+      Data4: 1025602717
+    Path: event:/AnimalConcert
 --- !u!4 &2015207688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 644027910916855787, guid: 8cb75dc2fdd63734988b8358f1314d25,
@@ -15466,7 +15414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2025109068
 RectTransform:
   m_ObjectHideFlags: 0

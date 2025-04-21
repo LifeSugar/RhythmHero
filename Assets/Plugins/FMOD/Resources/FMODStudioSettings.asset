@@ -305,10 +305,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
+  HasSourceProject: 0
+  HasPlatforms: 0
   sourceProjectPath: FmodAudioProjects/FmodAudioProjects.fspro
-  sourceBankPath: FmodAudioProjects/Build
+  sourceBankPath: FmodAudioProjects/Build/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -331,13 +331,10 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  - Desktop/Master
   Banks:
   - AnimalBand
   - BGM
-  - Desktop/AnimalBand
-  - Desktop/BGM
-  - Desktop/SFX
+  - Bird
   - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
