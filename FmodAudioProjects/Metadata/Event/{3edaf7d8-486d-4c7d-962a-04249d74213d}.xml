@@ -240,6 +240,9 @@
 		<property name="length">
 			<value>17.454557823129253</value>
 		</property>
+		<property name="volume">
+			<value>-14.5</value>
+		</property>
 		<relationship name="triggerConditions">
 			<destination>{f4f6ee40-684e-4fa0-bfa6-adbff1b3c5c9}</destination>
 		</relationship>
@@ -267,6 +270,9 @@
 		</property>
 		<property name="length">
 			<value>17.454557823129253</value>
+		</property>
+		<property name="volume">
+			<value>-14</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{1d9cddd4-700c-4203-b570-f5357a674850}</destination>
@@ -296,6 +302,9 @@
 		<property name="length">
 			<value>17.454557823129253</value>
 		</property>
+		<property name="volume">
+			<value>-15.5</value>
+		</property>
 		<relationship name="triggerConditions">
 			<destination>{65fe1f14-0bc8-4dc8-9164-65eeafbdb315}</destination>
 		</relationship>
@@ -323,6 +332,9 @@
 		</property>
 		<property name="length">
 			<value>17.454557823129253</value>
+		</property>
+		<property name="volume">
+			<value>-15</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{12223872-1c81-41e9-adad-b709f44a4c15}</destination>
@@ -352,6 +364,9 @@
 		<property name="length">
 			<value>17.454557823129253</value>
 		</property>
+		<property name="volume">
+			<value>-8.5</value>
+		</property>
 		<relationship name="triggerConditions">
 			<destination>{a25a3c5d-781d-4f27-82cd-4efc6417989e}</destination>
 		</relationship>
@@ -379,6 +394,9 @@
 		</property>
 		<property name="length">
 			<value>17.454557823129253</value>
+		</property>
+		<property name="volume">
+			<value>-9.5</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{d3f8fcf0-3831-4f40-b410-cb2010edfb6f}</destination>
@@ -408,6 +426,9 @@
 		<property name="length">
 			<value>17.454557823129253</value>
 		</property>
+		<property name="volume">
+			<value>-8.5</value>
+		</property>
 		<relationship name="triggerConditions">
 			<destination>{ad0fc617-5405-40c5-bce7-151e212d7b3c}</destination>
 		</relationship>
@@ -436,6 +457,9 @@
 		<property name="length">
 			<value>17.454557823129253</value>
 		</property>
+		<property name="volume">
+			<value>-8.5</value>
+		</property>
 		<relationship name="triggerConditions">
 			<destination>{c54a9e8e-7b91-43a5-b78b-2c60e723494e}</destination>
 		</relationship>
@@ -463,6 +487,9 @@
 		</property>
 		<property name="length">
 			<value>17.454557823129253</value>
+		</property>
+		<property name="volume">
+			<value>-1</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{8987511a-5fdd-406d-8876-9c23eb51d874}</destination>
