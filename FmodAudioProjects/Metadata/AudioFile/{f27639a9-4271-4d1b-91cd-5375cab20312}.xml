@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{f27639a9-4271-4d1b-91cd-5375cab20312}">
 		<property name="assetPath">
-			<value>Scene2/SFX/UI/UI_Cross:Return.wav</value>
+			<value>Scene2/SFX/UI/UI_CrossReturn.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
