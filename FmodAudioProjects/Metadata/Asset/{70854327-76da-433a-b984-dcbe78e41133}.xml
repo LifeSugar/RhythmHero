@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="EncodableAsset" id="{70854327-76da-433a-b984-dcbe78e41133}">
 		<property name="assetPath">
-			<value>Scene1 (主场景）/MUS /MUS1_Bpm120/</value>
+			<value>Scene1/MUS/MUS1_Bpm120/</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{50f1fba5-c29c-417d-943d-013c511399b3}</destination>

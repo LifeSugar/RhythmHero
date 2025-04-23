@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{372e8181-d8f3-4c51-8e68-6c14e6050a07}">
 		<property name="assetPath">
-			<value>Scene2（小游戏）/MUS /三种情绪/Happy/Happy_Track2.wav</value>
+			<value>Scene2/MUS/三种情绪/Happy/Happy_Track2.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

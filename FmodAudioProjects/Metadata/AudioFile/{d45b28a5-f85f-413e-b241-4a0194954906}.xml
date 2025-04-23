@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{d45b28a5-f85f-413e-b241-4a0194954906}">
 		<property name="assetPath">
-			<value>Scene1 (主场景）/SFX/Amb/Amb.wav</value>
+			<value>Scene1/SFX/Amb/Amb.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

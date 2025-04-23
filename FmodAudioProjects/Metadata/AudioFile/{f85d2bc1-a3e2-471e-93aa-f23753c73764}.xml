@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{f85d2bc1-a3e2-471e-93aa-f23753c73764}">
 		<property name="assetPath">
-			<value>Scene1 (主场景）/SFX/Footsteps/Footsteps 57-KS_Boots Forest_21.wav</value>
+			<value>Scene1/SFX/Footsteps/Footsteps 57-KS_Boots Forest_21.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

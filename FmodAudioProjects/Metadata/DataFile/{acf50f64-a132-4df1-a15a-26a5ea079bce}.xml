@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="DataFile" id="{acf50f64-a132-4df1-a15a-26a5ea079bce}">
 		<property name="assetPath">
-			<value>Scene2（小游戏）/SFX /UI /UI_Animal_Correct.wav.asd</value>
+			<value>Scene2/SFX/UI/UI_Animal_Correct.wav.asd</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{50f1fba5-c29c-417d-943d-013c511399b3}</destination>

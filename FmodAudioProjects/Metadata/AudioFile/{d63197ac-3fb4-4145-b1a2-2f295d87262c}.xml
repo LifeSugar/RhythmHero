@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{d63197ac-3fb4-4145-b1a2-2f295d87262c}">
 		<property name="assetPath">
-			<value>Scene1 (主场景）/MUS /MUS3_Bpm134/MUS3_Layer4.wav</value>
+			<value>Scene1/MUS/MUS3_Bpm134/MUS3_Layer4.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

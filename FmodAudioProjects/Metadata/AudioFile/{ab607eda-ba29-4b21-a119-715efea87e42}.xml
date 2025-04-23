@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ab607eda-ba29-4b21-a119-715efea87e42}">
 		<property name="assetPath">
-			<value>Scene2（小游戏）/SFX /叽里呱啦/ghost2.wav</value>
+			<value>Scene2/SFX/jiliguala/ghost2.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

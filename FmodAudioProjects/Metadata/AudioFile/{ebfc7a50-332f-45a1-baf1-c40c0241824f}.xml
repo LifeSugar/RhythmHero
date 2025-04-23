@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ebfc7a50-332f-45a1-baf1-c40c0241824f}">
 		<property name="assetPath">
-			<value>Scene2（小游戏）/MUS /三种情绪/Calm/Calm_Track3.wav</value>
+			<value>Scene2/MUS/三种情绪/Calm/Calm_Track3.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

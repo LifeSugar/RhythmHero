@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{3e79f386-14db-4fd3-8ebb-0cb1b9d151b2}">
 		<property name="assetPath">
-			<value>Scene1 (主场景）/SFX/Fire/Fire.wav</value>
+			<value>Scene1/SFX/Fire/Fire.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

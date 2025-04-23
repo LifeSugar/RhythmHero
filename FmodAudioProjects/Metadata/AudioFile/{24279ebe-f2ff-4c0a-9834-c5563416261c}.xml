@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{24279ebe-f2ff-4c0a-9834-c5563416261c}">
 		<property name="assetPath">
-			<value>Scene2（小游戏）/SFX /UI /UI_OK.wav</value>
+			<value>Scene2/SFX/UI/UI_OK.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

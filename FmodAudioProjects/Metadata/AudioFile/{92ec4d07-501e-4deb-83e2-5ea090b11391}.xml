@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{92ec4d07-501e-4deb-83e2-5ea090b11391}">
 		<property name="assetPath">
-			<value>Scene2（小游戏）/SFX /叽里呱啦/ghost4.wav</value>
+			<value>Scene2/SFX/jiliguala/ghost4.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
