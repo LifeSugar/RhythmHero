@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ebfc7a50-332f-45a1-baf1-c40c0241824f}">
+		<property name="assetPath">
+			<value>Scene2（小游戏）/MUS /三种情绪/Calm/Calm_Track3.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>35.625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50f1fba5-c29c-417d-943d-013c511399b3}</destination>
+		</relationship>
+	</object>
+</objects>

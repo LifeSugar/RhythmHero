@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{ba92d888-5473-4d38-b6c3-401d900b4018}">
+		<property name="assetPath">
+			<value>Scene2（小游戏）/SFX /UI /</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50f1fba5-c29c-417d-943d-013c511399b3}</destination>
+		</relationship>
+	</object>
+</objects>
