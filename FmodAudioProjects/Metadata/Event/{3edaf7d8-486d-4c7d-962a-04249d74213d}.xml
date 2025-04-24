@@ -79,6 +79,7 @@
 	<object class="GroupTrack" id="{65302b59-5dd4-477c-a2bc-ade44507cd33}">
 		<relationship name="modules">
 			<destination>{873da3e9-636e-480d-aa15-df7a341fb346}</destination>
+			<destination>{54e860b8-9bc2-44a1-a031-c7e8ccf25a72}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{4510f6ea-e8cc-4ad4-93db-41a71af9435d}</destination>
@@ -87,6 +88,7 @@
 	<object class="GroupTrack" id="{48dd91fd-d16a-41fd-87e8-2f7637d9b22b}">
 		<relationship name="modules">
 			<destination>{245962b0-f25f-43bb-8aa8-0346c8c06bcf}</destination>
+			<destination>{2b230d9c-296c-4b84-a46c-065532f0f36f}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{bf7b31ed-2102-40b3-b2ed-ff65ac312705}</destination>
@@ -186,6 +188,8 @@
 			<destination>{aa1bbec1-e16f-448f-8b97-0dd016080168}</destination>
 			<destination>{ea64ce6f-1d5d-4bff-ab99-d280c9deee25}</destination>
 			<destination>{e234a994-4461-480e-b73f-0ddf8adccecc}</destination>
+			<destination>{54e860b8-9bc2-44a1-a031-c7e8ccf25a72}</destination>
+			<destination>{2b230d9c-296c-4b84-a46c-065532f0f36f}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{b5a1bfb6-39cd-4ad4-b026-1604f1a59597}</destination>
@@ -250,6 +254,14 @@
 			<destination>{ba1aba51-e743-4cb6-abae-01d718109f0f}</destination>
 		</relationship>
 	</object>
+	<object class="MultiSound" id="{54e860b8-9bc2-44a1-a031-c7e8ccf25a72}">
+		<property name="start">
+			<value>18</value>
+		</property>
+		<property name="length">
+			<value>4.5</value>
+		</property>
+	</object>
 	<object class="EventMixerGroup" id="{4510f6ea-e8cc-4ad4-93db-41a71af9435d}">
 		<property name="name">
 			<value>Audio 1</value>
@@ -279,6 +291,20 @@
 		</relationship>
 		<relationship name="audioFile">
 			<destination>{2c2c57ac-4354-460b-9ea0-cee2c6762b32}</destination>
+		</relationship>
+	</object>
+	<object class="CommandSound" id="{2b230d9c-296c-4b84-a46c-065532f0f36f}">
+		<property name="start">
+			<value>18</value>
+		</property>
+		<property name="length">
+			<value>4.5</value>
+		</property>
+		<property name="commandType">
+			<value>1</value>
+		</property>
+		<relationship name="commandTarget">
+			<destination>{3edaf7d8-486d-4c7d-962a-04249d74213d}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{bf7b31ed-2102-40b3-b2ed-ff65ac312705}">
