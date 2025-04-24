@@ -28779,6 +28779,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4932640339218597613}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &965652930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965652931}
+  m_Layer: 0
+  m_Name: -------Interactions---------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965652931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965652930}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.877032, y: 3.1620512, z: -43.035152}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969558173
 GameObject:
   m_ObjectHideFlags: 0
@@ -32352,7 +32383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractionUI: {fileID: 1760500712}
   hasInteracted: 0
-  dialogue: {fileID: 11400000, guid: 052ea20c4e15fce4e8bd1c1688857cbd, type: 2}
+  dialogue: {fileID: 11400000, guid: c5051798694dbd24a910e10bf01caff1, type: 2}
   Sound:
     Guid:
       Data1: -92453884
@@ -89505,6 +89536,7 @@ SceneRoots:
   - {fileID: 1004688144}
   - {fileID: 8037742965580000513}
   - {fileID: 942855841997714663}
+  - {fileID: 965652931}
   - {fileID: 1207208711}
   - {fileID: 997186511}
   - {fileID: 501509792}
