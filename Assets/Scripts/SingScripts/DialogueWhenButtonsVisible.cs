@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using rhythmhero;
+using UnityEngine;
 
 public class DialogueWhenButtonsVisible : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class DialogueWhenButtonsVisible : MonoBehaviour
 
     [Header("只触发一次？")]
     public bool triggerOnce = true;
+
+    [Header("对话内容")] 
+    public DialogueData dialogue;
 
     [Header("触发对话的对象（可选）")]
     public GameObject dialoguePanel;
@@ -40,6 +44,7 @@ public class DialogueWhenButtonsVisible : MonoBehaviour
         if (dialoguePanel != null)
         {
             dialoguePanel.SetActive(true);
+            DialogueManager.instance.StartDialogue();
         }
         // 你也可以在这里播放语音、调动画、激活系统
     }

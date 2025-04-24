@@ -305,10 +305,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 0
-  HasPlatforms: 0
+  HasSourceProject: 1
+  HasPlatforms: 1
   sourceProjectPath: FmodAudioProjects/FmodAudioProjects.fspro
-  sourceBankPath: FmodAudioProjects/Build/Desktop
+  sourceBankPath: FmodAudioProjects/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -349,7 +349,7 @@ MonoBehaviour:
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131623
   HideSetupWizard: 1
-  LastEventReferenceScanVersion: 131622
+  LastEventReferenceScanVersion: 131623
   Platforms:
   - {fileID: -9157806056874684003}
   - {fileID: -4006924378115100261}
