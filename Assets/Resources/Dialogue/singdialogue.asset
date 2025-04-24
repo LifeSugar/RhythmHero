@@ -16,24 +16,12 @@ MonoBehaviour:
   - characterName: Ghost
     characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
       type: 3}
-    dialogueText: hello!
+    dialogueText: hello1212231231
   - characterName: You
     characterPortrait: {fileID: 21300000, guid: f1626c2b086030d498fbee7a5da51299,
       type: 3}
-    dialogueText: hey!
+    dialogueText: 213143423432
   - characterName: Ghost
     characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
       type: 3}
     dialogueText: hello,dfdlkgajfkgjfldjfakl;djklg;jakl;jgkl;sfjg;klfj;g
-  - characterName: Ghost
-    characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
-      type: 3}
-    dialogueText: Here comes the Sun!
-  - characterName: Ghost
-    characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
-      type: 3}
-    dialogueText: ghdg
-  - characterName: Ghost
-    characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
-      type: 3}
-    dialogueText: EndDialog
