@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{b71c61fc-3991-4fc6-a01f-f094adcb8532}">
 		<property name="name">
 			<value>BirdMix</value>
@@ -98,8 +98,8 @@
 	</object>
 	<object class="Timeline" id="{e297fddd-a89f-4198-b569-5dee64201d0d}">
 		<relationship name="modules">
-			<destination>{3a331502-fd28-4709-b7e2-069621669c8d}</destination>
 			<destination>{8c7d9100-9c17-42ac-bf67-1bea914f46fb}</destination>
+			<destination>{3a331502-fd28-4709-b7e2-069621669c8d}</destination>
 			<destination>{47ccc03c-146b-494b-b600-6a55e27b97fc}</destination>
 			<destination>{1240fae1-8d6d-4ee5-a1c1-5060ea21c60b}</destination>
 		</relationship>
@@ -133,7 +133,6 @@
 		<property name="length">
 			<value>17.832925170068027</value>
 		</property>
-		<property name="name" />
 		<relationship name="triggerConditions">
 			<destination>{0c70d792-27fa-492b-b261-059dbb07278c}</destination>
 		</relationship>

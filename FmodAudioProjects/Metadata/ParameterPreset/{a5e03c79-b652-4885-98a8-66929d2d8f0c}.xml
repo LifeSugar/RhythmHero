@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="ParameterPreset" id="{a5e03c79-b652-4885-98a8-66929d2d8f0c}">
 		<property name="name">
 			<value>BirdOn</value>

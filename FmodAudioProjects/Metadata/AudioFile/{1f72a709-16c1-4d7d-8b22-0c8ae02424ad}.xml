@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{1f72a709-16c1-4d7d-8b22-0c8ae02424ad}">
 		<property name="assetPath">
 			<value>Scene1/MUS/MUS1_Bpm120/MUS1_Master.wav</value>

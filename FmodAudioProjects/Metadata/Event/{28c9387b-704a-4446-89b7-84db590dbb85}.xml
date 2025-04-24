@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{28c9387b-704a-4446-89b7-84db590dbb85}">
 		<property name="name">
 			<value>Snake</value>
@@ -92,9 +92,9 @@
 	</object>
 	<object class="Timeline" id="{3d1520d9-9045-498f-b7f5-43eedda33b05}">
 		<relationship name="modules">
+			<destination>{c673e199-2d76-4c4a-9d91-49055967d271}</destination>
 			<destination>{995f8031-6f77-46e3-8e18-c5a753cbd3c2}</destination>
 			<destination>{7d113018-37f4-4cd7-8d2c-cdec99fc19ae}</destination>
-			<destination>{c673e199-2d76-4c4a-9d91-49055967d271}</destination>
 			<destination>{9fb45465-fc17-4843-951f-7d5b8293c11d}</destination>
 		</relationship>
 	</object>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{5175d10c-6491-408e-bf24-eb379f3c47a2}">
 		<property name="assetPath">
 			<value>PlayerSFX/swish/Swish-004.ogg</value>

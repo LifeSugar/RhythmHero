@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{03a03175-4001-45de-81c8-1e1668e27c69}">
 		<property name="assetPath">
 			<value>Scene1/SFX/Waterfall/Waterfall.wav</value>

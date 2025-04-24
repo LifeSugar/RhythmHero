@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{d45b28a5-f85f-413e-b241-4a0194954906}">
 		<property name="assetPath">
 			<value>Scene1/SFX/Amb/Amb.wav</value>

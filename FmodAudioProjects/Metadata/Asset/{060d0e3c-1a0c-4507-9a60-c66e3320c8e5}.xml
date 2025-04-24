@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="EncodableAsset" id="{060d0e3c-1a0c-4507-9a60-c66e3320c8e5}">
 		<property name="assetPath">
 			<value>Scene2/MUS/</value>

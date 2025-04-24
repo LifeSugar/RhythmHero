@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="ParameterPreset" id="{7a2f65bc-3c94-4629-bfaa-815f0807a14a}">
 		<property name="name">
 			<value>MouseOn</value>

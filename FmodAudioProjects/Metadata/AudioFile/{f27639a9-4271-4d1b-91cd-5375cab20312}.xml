@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{f27639a9-4271-4d1b-91cd-5375cab20312}">
 		<property name="assetPath">
 			<value>Scene2/SFX/UI/UI_CrossReturn.wav</value>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{cddbc0e4-aa73-499a-9383-26b7893be666}">
 		<property name="name">
 			<value>Bird</value>
@@ -86,10 +86,10 @@
 	</object>
 	<object class="Timeline" id="{6fb25b2e-a3fb-4948-adaa-94e047aa276c}">
 		<relationship name="modules">
-			<destination>{1b5b28fd-55f6-4d66-80fe-95a3d335f2b6}</destination>
-			<destination>{7d215bbd-493d-4d0f-858a-93f665af5c17}</destination>
 			<destination>{6777e290-148c-4207-9e47-893e26ec6928}</destination>
+			<destination>{1b5b28fd-55f6-4d66-80fe-95a3d335f2b6}</destination>
 			<destination>{c160b3db-635c-4118-aed9-3f84a4292a22}</destination>
+			<destination>{7d215bbd-493d-4d0f-858a-93f665af5c17}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{e9f67fdc-a190-4ac6-ad6e-a7a5459da181}">

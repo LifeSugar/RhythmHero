@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{9cb61427-0327-42f9-a321-50f2f1bd05b2}">
 		<property name="assetPath">
 			<value>Scene2/MUS/三种情绪/Sad/Sad_Track4.wav</value>

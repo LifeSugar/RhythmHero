@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{1a567089-7ba0-4795-9960-882b31df5bec}">
 		<property name="assetPath">
 			<value>Scene1/SFX/Footsteps/Footsteps 51-KS_Boots Forest_21.wav</value>

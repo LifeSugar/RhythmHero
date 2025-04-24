@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="DataFile" id="{acf50f64-a132-4df1-a15a-26a5ea079bce}">
 		<property name="assetPath">
 			<value>Scene2/SFX/UI/UI_Animal_Correct.wav.asd</value>

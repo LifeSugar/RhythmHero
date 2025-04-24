@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{3edaf7d8-486d-4c7d-962a-04249d74213d}">
 		<property name="name">
 			<value>AnimalConcert</value>
@@ -174,17 +174,17 @@
 	</object>
 	<object class="Timeline" id="{631ec867-5657-4759-8436-40bd440c3833}">
 		<relationship name="modules">
+			<destination>{ea64ce6f-1d5d-4bff-ab99-d280c9deee25}</destination>
+			<destination>{15d09de4-758a-4258-b2eb-d34257843285}</destination>
+			<destination>{ce41acd3-abfb-43df-a91a-df90932e8a03}</destination>
 			<destination>{873da3e9-636e-480d-aa15-df7a341fb346}</destination>
 			<destination>{245962b0-f25f-43bb-8aa8-0346c8c06bcf}</destination>
-			<destination>{ce41acd3-abfb-43df-a91a-df90932e8a03}</destination>
 			<destination>{afd7567e-c1c3-4b6d-83f8-29153d4d4fa0}</destination>
 			<destination>{23b5ce9b-c1d2-43f9-82a3-7fd227191b4b}</destination>
 			<destination>{af94a940-d8c8-42ca-882f-b2e16c51bc3b}</destination>
-			<destination>{15d09de4-758a-4258-b2eb-d34257843285}</destination>
 			<destination>{0595da2b-abf7-46bd-bfc1-78021c7eb8a7}</destination>
 			<destination>{af821e92-6f98-4b84-a73b-1da6ae2bbcaa}</destination>
 			<destination>{aa1bbec1-e16f-448f-8b97-0dd016080168}</destination>
-			<destination>{ea64ce6f-1d5d-4bff-ab99-d280c9deee25}</destination>
 			<destination>{e234a994-4461-480e-b73f-0ddf8adccecc}</destination>
 		</relationship>
 		<relationship name="markers">
