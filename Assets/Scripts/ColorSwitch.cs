@@ -14,7 +14,7 @@ namespace rhythmhero
         void Start()
         {
             material = GetComponent<Renderer>().material;
-            BGMManager.instance.OneBeat += ColorChange;
+            BGMManager.instance.OnBeat += ColorChange;
         }
 
         void ColorChange()

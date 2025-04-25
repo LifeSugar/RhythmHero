@@ -14,5 +14,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - characterName: You
-    characterPortrait: {fileID: 0}
-    dialogueText: 
+    characterPortrait: {fileID: 21300000, guid: f1626c2b086030d498fbee7a5da51299,
+      type: 3}
+    dialogueText: '!!!???? What is this?!'
+  - characterName: Little Ghost
+    characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
+      type: 3}
+    dialogueText: "I\u2019m the guardian spirit of this village."
+  - characterName: You
+    characterPortrait: {fileID: 21300000, guid: f1626c2b086030d498fbee7a5da51299,
+      type: 3}
+    dialogueText: Ah... Are you crying?
+  - characterName: Little Ghost
+    characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
+      type: 3}
+    dialogueText: "I was supposed to protect this village\u2026 boohoo\u2026"
+  - characterName: You
+    characterPortrait: {fileID: 21300000, guid: f1626c2b086030d498fbee7a5da51299,
+      type: 3}
+    dialogueText: What happened here?
+  - characterName: Little Ghost
+    characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
+      type: 3}
+    dialogueText: Everyone used to be here (sobs)... but then one day...
+  - characterName: Little Ghost
+    characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
+      type: 3}
+    dialogueText: "A terrible incident happened. It brought radiation and fog, and
+      after that, everything changed... So now there\u2019s no one left."
+  - characterName: You
+    characterPortrait: {fileID: 21300000, guid: f1626c2b086030d498fbee7a5da51299,
+      type: 3}
+    dialogueText: What kind of incident?
+  - characterName: Little Ghost
+    characterPortrait: {fileID: 21300000, guid: 4064d2c433ff4b84b93308dcba9b07d6,
+      type: 3}
+    dialogueText: "It\u2019s too scary... boohoo... I don\u2019t dare say. Go look
+      around. You\u2019ll find it."

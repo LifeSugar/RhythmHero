@@ -1,113 +1,186 @@
 using System.Collections;
 using System.Collections.Generic;
-using FMOD.Studio;
-using FMODUnity;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 namespace rhythmhero.audio
 {
+    /// <summary>
+    /// 全局背景音乐管理器  
+    /// - 节拍同步（按 BPM / 拍号）  
+    /// - OnBeat / OnBar 事件回调  
+    /// - 支持淡入淡出切歌
+    /// </summary>
     public class BGMManager : MonoBehaviour
     {
-        // 单例模式，方便全局访问
+        /* ─────────────── 单例 ─────────────── */
         public static BGMManager instance { get; private set; }
 
-        // 音乐事件引用列表
-        public List<EventReference> bgms = new List<EventReference>();
+        /* ─────────────── 数据结构 ─────────────── */
 
-        // FMOD 实例列表，对应 bgms
-        public List<EventInstance> bgmInstances = new List<EventInstance>();
-        
-        //BGM Position
-        public List<Transform> bgmTransforms = new List<Transform>();
-
-        // 计时器
-        public float timer;
-
-        // 上一个触发 0.5s 和 2s 节拍的计数，用于防止重复触发
-        private int lastHalfBeat = -1;
-        private int lastFullBeat = -1;
-
-        // 定义两个节拍事件，外部脚本可以订阅这些事件
-        public event System.Action OneBeat;  // 每 0.5 秒触发
-        public event System.Action FourBeat; // 每 2 秒触发
-        
-        //定义两个float辅助矫正动画
-        public float checkerhalf;
-        private float checkerfour;
-
-        void Awake()
+        [System.Serializable]
+        public class TrackInfo
         {
-            // 单例模式检查，防止场景中出现多个 BGMManager 实例
+            [Header("FMOD Event")] public EventReference eventRef;
+
+            [Header("Tempo")] [Range(30, 240)] public float bpm = 120f; // 曲目速度
+            [Range(1, 12)] public int beatsPerBar = 4; // 拍号（每小节几拍）
+
+            [HideInInspector] public EventInstance instance; // 运行时实例
+            [HideInInspector] public int lastBeat = -1; // 节拍缓存
+            [HideInInspector] public int lastBar = -1; // 小节缓存
+        }
+
+        [Header("Playlist")] public List<TrackInfo> tracks = new();
+
+        /* ─────────────── 事件 ─────────────── */
+        public event System.Action OnBeat; // 每一拍（quarter-note）
+        public event System.Action OnBar; // 每一小节
+
+        /* ─────────────── 私有字段 ─────────────── */
+        private int currentTrackIndex = -1;
+
+        private TrackInfo CurrentTrack =>
+            (currentTrackIndex >= 0 && currentTrackIndex < tracks.Count)
+                ? tracks[currentTrackIndex]
+                : null;
+
+        /* ─────────────── 生命周期 ─────────────── */
+
+        private void Awake()
+        {
             if (instance != null)
             {
-                Debug.LogWarning("More than one BGM manager in scene.");
+                Debug.LogWarning("More than one BGMManager in scene.");
+                Destroy(gameObject);
                 return;
             }
+
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
-        void Start()
+        private void Start()
         {
-            // 初始化 BGM 实例
-            AudioManager.instance.InitializeBGMInstance();
+            if (tracks.Count > 0)
+                SwitchToTrack(0, 0f, 0.5f); // 开场播放第 0 首，淡入 0.5 秒
         }
 
-        void Update()
+        private void Update()
         {
-            // 每帧检查节拍并触发对应的事件
-            BeatsChecker();
-            
+            if (CurrentTrack != null)
+                CheckBeats(CurrentTrack);
         }
+
+        /* ─────────────── 节拍检测 ─────────────── */
+
+        private void CheckBeats(TrackInfo track)
+        {
+            if (!track.instance.isValid()) return;
+
+            track.instance.getTimelinePosition(out int posMs);
+
+            // 1 拍时长（毫秒）
+            float beatLenMs = 60000f / track.bpm;
+
+            int beatIndex = Mathf.FloorToInt(posMs / beatLenMs);
+            int barIndex = beatIndex / track.beatsPerBar;
+
+            if (beatIndex != track.lastBeat)
+            {
+                track.lastBeat = beatIndex;
+                OnBeat?.Invoke();
+            }
+
+            if (barIndex != track.lastBar)
+            {
+                track.lastBar = barIndex;
+                OnBar?.Invoke();
+            }
+        }
+
+        /* ─────────────── 公共 API：切歌 ─────────────── */
 
         /// <summary>
-        /// 检查当前播放位置并触发节拍事件。
-        /// 每 0.5 秒触发 OneBeat，每 2 秒触发 FourBeat。
+        /// 切换到 playlist 中指定索引的曲目。
         /// </summary>
-        void BeatsChecker()
+        /// <param name="index">tracks 的索引</param>
+        /// <param name="fadeOutTime">旧曲淡出时间（秒）</param>
+        /// <param name="fadeInTime">新曲淡入时间（秒）</param>
+        public void SwitchToTrack(int index, float fadeOutTime = 0.5f, float fadeInTime = 0.5f)
         {
-            // 确保有 BGM 实例在播放
-            if (bgmInstances.Count == 0) return;
-
-            // 获取当前 BGM 的时间线位置（毫秒）
-            bgmInstances[0].getTimelinePosition(out int currentPositionMs);
-
-            //计算每拍进程（秒）
-            checkerhalf = (currentPositionMs / 1000f) % 0.5f;
-            checkerfour = (currentPositionMs / 1000f) % 2.0f;
-
-            // 计算当前的 0.5 秒和 2 秒节拍计数
-            int currentHalfBeat = currentPositionMs / 500;  // 每 0.5 秒一个节拍
-            int currentFullBeat = currentPositionMs / 2000; // 每 2 秒一个节拍
-
-            // 检查 0.5 秒节拍（OneBeat）
-            if (currentHalfBeat != lastHalfBeat)
+            if (index < 0 || index >= tracks.Count)
             {
-                lastHalfBeat = currentHalfBeat;
-                OneBeat?.Invoke(); // 触发 OneBeat 事件
+                Debug.LogWarning($"BGMManager: invalid track index {index}");
+                return;
             }
 
-            // 检查 2 秒节拍（FourBeat）
-            if (currentFullBeat != lastFullBeat)
-            {
-                lastFullBeat = currentFullBeat;
-                FourBeat?.Invoke(); // 触发 FourBeat 事件
-            }
+            if (index == currentTrackIndex) return;
+
+            StopAllCoroutines();
+            StartCoroutine(SwitchCoroutine(index, fadeOutTime, fadeInTime));
         }
         
-        //校正动画的方法
-        public void SyncIdleAnimation(Animator animator, string idleStateName)
+
+        private IEnumerator SwitchCoroutine(int newIndex, float fadeOut, float fadeIn)
         {
-            // if (checkerhalf >= 0f)
-            // {
-            //     // 计算动画起始时间
-            //     float normalizedTime = checkerhalf;
-            //
-            //     // 播放 Idle 动画，并从 normalizedTime 开始
-            //     animator.Play(idleStateName, 0, normalizedTime);
-            //
-            //     Debug.Log($"同步动画到 checkerhalf 时间点，起始时间为 {checkerhalf} 秒");
-            // }
+            TrackInfo oldTrack = CurrentTrack;
+            TrackInfo newTrack = tracks[newIndex];
+
+            /* 1. 准备新曲实例 */
+            if (!newTrack.instance.isValid())
+                newTrack.instance = RuntimeManager.CreateInstance(newTrack.eventRef);
+
+            /* 2. 旧曲淡出 */
+            if (oldTrack != null && oldTrack.instance.isValid())
+            {
+                oldTrack.instance.getVolume(out float startVol);
+                for (float t = 0f; t < fadeOut; t += Time.unscaledDeltaTime)
+                {
+                    float v = Mathf.Lerp(startVol, 0f, t / fadeOut);
+                    oldTrack.instance.setVolume(v);
+                    yield return null;
+                }
+
+                oldTrack.instance.setVolume(0f);
+                oldTrack.instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                oldTrack.instance.release();
+            }
+
+            /* 3. 切换索引 + 重置缓存 */
+            currentTrackIndex = newIndex;
+            newTrack.lastBeat = -1;
+            newTrack.lastBar = -1;
+
+            /* 4. 新曲淡入 */
+            newTrack.instance.setVolume(0f);
+            newTrack.instance.start();
+
+            for (float t = 0f; t < fadeIn; t += Time.unscaledDeltaTime)
+            {
+                float v = Mathf.Lerp(0f, 1f, t / fadeIn);
+                newTrack.instance.setVolume(v);
+                yield return null;
+            }
+
+            newTrack.instance.setVolume(1f);
         }
 
+        /* ─────────────── 调试用 Gizmo ─────────────── */
+#if UNITY_EDITOR
+        private void OnGUI()
+        {
+            if (CurrentTrack == null) return;
+            GUILayout.Label(
+                $"BGM: {currentTrackIndex}  |  BPM: {CurrentTrack.bpm}  |  Time: {GetTimelineMs() / 1000f:0.00}s");
+
+            int GetTimelineMs()
+            {
+                CurrentTrack.instance.getTimelinePosition(out int ms);
+                return ms;
+            }
+        }
+#endif
     }
 }

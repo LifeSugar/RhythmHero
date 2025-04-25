@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine.Serialization;
 using rhythmhero;
 using rhythmhero.audio;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -59,6 +60,15 @@ public class DialogueManager : MonoBehaviour
         }
 
         instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
+        SceneManager.sceneLoaded += OnsceneLoaded;
+    }
+
+    private void OnsceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        Debug.Log("Scene Loaded: " + arg0.name);
+        SceneManager.MoveGameObjectToScene(this.gameObject, arg0);
     }
 
     void Start()
@@ -111,13 +121,13 @@ public class DialogueManager : MonoBehaviour
         {
             isDialogueActive = true;
             dialoguePanel.SetActive(true);
-            endDialoguePanel.SetActive(false);
+            // endDialoguePanel.SetActive(false);
             currentLineIndex = 0;
             ShowLine();
             currentData.RaiseOnDialogueLineChanged(currentLineIndex);
         }
 
-        GameManager.instance.gameState = GameState.InDialogue;
+        // GameManager.instance.gameState = GameState.InDialogue;
     }
 
     /// <summary>
@@ -195,12 +205,12 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     void CallPeriodicMethod()
     {
-        //这里还可以根据currentData.line.charactorname来判断是哪个角色，播放不同的音效
-        AudioManager.instance.PlayOneShot(voice, Camera.main.transform.position);
-        if (currentData.lines[currentLineIndex].characterName != "monkey")
-        {
-            AudioManager.instance.PlayOneShot(monkeyvoice, Camera.main.transform.position);
-        }
+        // 这里还可以根据currentData.line.charactorname来判断是哪个角色，播放不同的音效
+         AudioManager.instance.PlayOneShot(voice, Camera.main.transform.position);
+         if (currentData.lines[currentLineIndex].characterName != "monkey")
+         {
+             AudioManager.instance.PlayOneShot(monkeyvoice, Camera.main.transform.position);
+         }
     }
 
     /// <summary>

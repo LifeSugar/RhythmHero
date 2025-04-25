@@ -1,4 +1,5 @@
-﻿using rhythmhero;
+﻿using System;
+using rhythmhero;
 using UnityEngine;
 
 public class DialogueWhenButtonsVisible : MonoBehaviour
@@ -16,6 +17,11 @@ public class DialogueWhenButtonsVisible : MonoBehaviour
     public GameObject dialoguePanel;
 
     private bool hasTriggered = false;
+
+    private void Start()
+    {
+        dialoguePanel = DialogueManager.instance.dialoguePanel;
+    }
 
     void Update()
     {
@@ -44,6 +50,7 @@ public class DialogueWhenButtonsVisible : MonoBehaviour
         if (dialoguePanel != null)
         {
             dialoguePanel.SetActive(true);
+            DialogueManager.instance.currentData = dialogue;
             DialogueManager.instance.StartDialogue();
         }
         // 你也可以在这里播放语音、调动画、激活系统

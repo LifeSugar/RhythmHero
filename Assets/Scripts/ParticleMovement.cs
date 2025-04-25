@@ -102,6 +102,9 @@ namespace rhythmhero
             yield return new WaitUntil(() => Vector3.Distance(player.position, posC.position) <= arrivalThreshold);
             shakeTween.Kill();
             
+            this.transform.parent = Ghost.instance.transform;
+            this.transform.localPosition = new Vector3(0, 0.145999998f, -0.342999995f);
+
         }
     }
 }
