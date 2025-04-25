@@ -133,7 +133,6 @@
 		<property name="length">
 			<value>17.832925170068027</value>
 		</property>
-		<property name="name" />
 		<relationship name="triggerConditions">
 			<destination>{0c70d792-27fa-492b-b261-059dbb07278c}</destination>
 		</relationship>
@@ -207,13 +206,13 @@
 	</object>
 	<object class="SingleSound" id="{1240fae1-8d6d-4ee5-a1c1-5060ea21c60b}">
 		<property name="length">
-			<value>17.832925170068027</value>
+			<value>19.737785699818534</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{596506fd-9068-4ad9-9f04-e91144f1c4ec}</destination>
 		</relationship>
 		<relationship name="audioFile">
-			<destination>{8f2941b3-076e-4f44-8209-130a528e9483}</destination>
+			<destination>{f60b0b59-1938-47d0-9d1b-fa4b48bf9773}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{ffa666f6-1784-431c-abe3-d7be88cc4dd2}">

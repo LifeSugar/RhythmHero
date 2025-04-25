@@ -238,10 +238,13 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
 		</property>
 		<property name="volume">
 			<value>-14.5</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{f4f6ee40-684e-4fa0-bfa6-adbff1b3c5c9}</destination>
@@ -269,10 +272,13 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
 		</property>
 		<property name="volume">
 			<value>-14</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{1d9cddd4-700c-4203-b570-f5357a674850}</destination>
@@ -300,10 +306,13 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
 		</property>
 		<property name="volume">
 			<value>-15.5</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{65fe1f14-0bc8-4dc8-9164-65eeafbdb315}</destination>
@@ -331,16 +340,19 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
 		</property>
 		<property name="volume">
 			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{12223872-1c81-41e9-adad-b709f44a4c15}</destination>
 		</relationship>
 		<relationship name="audioFile">
-			<destination>{8f2941b3-076e-4f44-8209-130a528e9483}</destination>
+			<destination>{f60b0b59-1938-47d0-9d1b-fa4b48bf9773}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{94c63971-eae3-4386-bc35-9dd8e6a02500}">
@@ -362,10 +374,13 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
 		</property>
 		<property name="volume">
 			<value>-8.5</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{a25a3c5d-781d-4f27-82cd-4efc6417989e}</destination>
@@ -393,10 +408,13 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
 		</property>
 		<property name="volume">
 			<value>-9.5</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{d3f8fcf0-3831-4f40-b410-cb2010edfb6f}</destination>
@@ -424,10 +442,13 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
 		</property>
 		<property name="volume">
 			<value>-8.5</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{ad0fc617-5405-40c5-bce7-151e212d7b3c}</destination>
@@ -455,10 +476,13 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
 		</property>
 		<property name="volume">
 			<value>-8.5</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{c54a9e8e-7b91-43a5-b78b-2c60e723494e}</destination>
@@ -486,10 +510,13 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
 		</property>
 		<property name="volume">
 			<value>-1</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{8987511a-5fdd-406d-8876-9c23eb51d874}</destination>
@@ -517,7 +544,10 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{5fd54543-4932-4e51-930e-04bbeeecc3b8}</destination>
@@ -545,7 +575,10 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{cef28e59-720c-47aa-80e0-063bfc675404}</destination>
@@ -573,7 +606,10 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
+		</property>
+		<property name="pitch">
+			<value>1.60000002</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{18ba4822-d48b-4c7c-ad74-97be01af04c8}</destination>
@@ -601,7 +637,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>17.454557823129253</value>
+			<value>15.913712873270969</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{631ec867-5657-4759-8436-40bd440c3833}</destination>
