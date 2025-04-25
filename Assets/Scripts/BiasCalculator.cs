@@ -19,8 +19,8 @@ namespace rhythmhero
 
         void Start()
         {
-            BGMManager.instance.OneBeat += CalculateOneBeatBias;
-            BGMManager.instance.FourBeat += CalculateFourBeatBias;
+            BGMManager.instance.OnBeat += CalculateOneBeatBias;
+            BGMManager.instance.OnBar += CalculateFourBeatBias;
         }
 
         void Update()

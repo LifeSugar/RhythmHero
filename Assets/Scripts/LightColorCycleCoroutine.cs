@@ -21,8 +21,8 @@ public class LightColorCycleCoroutine : MonoBehaviour
             pointLight = GetComponent<Light>();
         }
 
-        BGMManager.instance.OneBeat += ChangeIntensity;
-        BGMManager.instance.FourBeat += ChangeColors;
+        BGMManager.instance.OnBeat += ChangeIntensity;
+        BGMManager.instance.OnBar += ChangeColors;
 
 
     }
@@ -48,7 +48,7 @@ public class LightColorCycleCoroutine : MonoBehaviour
 
     void OnDestroy()
     {
-        BGMManager.instance.OneBeat -= ChangeIntensity;
-        BGMManager.instance.FourBeat -= ChangeColors;
+        BGMManager.instance.OnBeat -= ChangeIntensity;
+        BGMManager.instance.OnBar -= ChangeColors;
     }
 }

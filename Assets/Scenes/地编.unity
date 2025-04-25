@@ -4612,6 +4612,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 300690268}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &304810409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304810410}
+  m_Layer: 0
+  m_Name: RoomInCorner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &304810410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304810409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.6, y: -2.58, z: 11.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1726433778}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &321138373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32829,11 +32860,11 @@ MonoBehaviour:
     Path: event:/TestBGM
   interactEvent:
     Guid:
-      Data1: 1421950928
-      Data2: 1175732909
-      Data3: 1686548664
-      Data4: 2121649858
-    Path: event:/UI/click
+      Data1: 614663230
+      Data2: 1288829876
+      Data3: 1324875693
+      Data4: 2118665528
+    Path: event:/UI/UIInteraction
   ambient: {fileID: 31849085}
   nextInteractionPoint: {fileID: 1942700709}
   inArea: 0
@@ -39188,6 +39219,7 @@ Transform:
   m_Children:
   - {fileID: 1207208711}
   - {fileID: 1942700709}
+  - {fileID: 304810410}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1728927357
@@ -47763,7 +47795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1963606129}
   - component: {fileID: 1963606131}
-  - component: {fileID: 1963606130}
+  - component: {fileID: 1963606132}
   m_Layer: 0
   m_Name: InteractionPoint
   m_TagString: Untagged
@@ -47787,38 +47819,6 @@ Transform:
   - {fileID: 790326091}
   m_Father: {fileID: 1942700709}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1963606130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963606128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee70694ef5e1a1498aa7991793520c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionUI: {fileID: 790326090}
-  hasInteracted: 0
-  dialogue: {fileID: 11400000, guid: 19201c0f58262da4bb3583cef45a398f, type: 2}
-  Sound:
-    Guid:
-      Data1: -92453884
-      Data2: 1190651826
-      Data3: 290143129
-      Data4: -1759173196
-    Path: event:/TestBGM
-  interactEvent:
-    Guid:
-      Data1: 1421950928
-      Data2: 1175732909
-      Data3: 1686548664
-      Data4: 2121649858
-    Path: event:/UI/click
-  ambient: {fileID: 31849085}
-  nextInteractionPoint: {fileID: 0}
-  inArea: 0
 --- !u!135 &1963606131
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -47840,6 +47840,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1963606132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963606128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec9df6de8344d73822ae02ff0ac3d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionUI: {fileID: 790326090}
+  hasInteracted: 0
+  dialogue: {fileID: 11400000, guid: 19201c0f58262da4bb3583cef45a398f, type: 2}
+  Sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  interactEvent:
+    Guid:
+      Data1: 614663230
+      Data2: 1288829876
+      Data3: 1324875693
+      Data4: 2118665528
+    Path: event:/UI/UIInteraction
+  nextInteractionPoint: {fileID: 304810410}
+  inArea: 0
 --- !u!4 &1964408860 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3118764758945162155, guid: f749fe6e1928c0346be5dc7a0f45780f,

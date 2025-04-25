@@ -49,51 +49,51 @@ namespace rhythmhero.audio
             return emitter;
         }
 
-        public void InitializeBGMInstance()
-        {
-            // foreach (var (bgm, Targetposition) in BGMManager.instance.bgms.Zip(BGMManager.instance.bgmTransforms, (bgm,Targetposition) => (bgm,Targetposition)) )
-            // {
-            //     EventInstance eventInstance = CreatEventInstance(bgm);
-            //     Debug.Log(Targetposition.position);
-            //     eventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(Targetposition.position));
-            //     BGMManager.instance.bgmInstances.Add(eventInstance);
-            //     eventInstance.start();
-            // }
-            
-            foreach (var (bgm, Targetposition) in BGMManager.instance.bgms.Zip(BGMManager.instance.bgmTransforms, (bgm, Targetposition) => (bgm, Targetposition)))
-            {
-                if (Targetposition == null)
-                {
-                    Debug.LogError("Targetposition is null!");
-                    continue;
-                }
-
-                Vector3 pos = Targetposition.position;
-                Debug.Log($"Targetposition: {pos}");
-
-                if (float.IsNaN(pos.x) || float.IsInfinity(pos.x) ||
-                    float.IsNaN(pos.y) || float.IsInfinity(pos.y) ||
-                    float.IsNaN(pos.z) || float.IsInfinity(pos.z))
-                {
-                    Debug.LogError($"Invalid position detected: {pos}");
-                    continue;
-                }
-
-                EventInstance eventInstance = CreatEventInstance(bgm);
-                if (!eventInstance.isValid())
-                {
-                    Debug.LogError("FMOD EventInstance is not valid!");
-                    continue;
-                }
-
-                var fmodAttributes = RuntimeUtils.To3DAttributes(pos);
-                Debug.Log($"FMOD Attributes: {fmodAttributes.position.x}, {fmodAttributes.position.y}, {fmodAttributes.position.z}");
-
-                eventInstance.set3DAttributes(fmodAttributes);
-                BGMManager.instance.bgmInstances.Add(eventInstance);
-                eventInstance.start();
-            }
-        }
+        // public void InitializeBGMInstance()
+        // {
+        //     // foreach (var (bgm, Targetposition) in BGMManager.instance.bgms.Zip(BGMManager.instance.bgmTransforms, (bgm,Targetposition) => (bgm,Targetposition)) )
+        //     // {
+        //     //     EventInstance eventInstance = CreatEventInstance(bgm);
+        //     //     Debug.Log(Targetposition.position);
+        //     //     eventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(Targetposition.position));
+        //     //     BGMManager.instance.bgmInstances.Add(eventInstance);
+        //     //     eventInstance.start();
+        //     // }
+        //     
+        //     foreach (var (bgm, Targetposition) in BGMManager.instance.bgms.Zip(BGMManager.instance.bgmTransforms, (bgm, Targetposition) => (bgm, Targetposition)))
+        //     {
+        //         if (Targetposition == null)
+        //         {
+        //             Debug.LogError("Targetposition is null!");
+        //             continue;
+        //         }
+        //
+        //         Vector3 pos = Targetposition.position;
+        //         Debug.Log($"Targetposition: {pos}");
+        //
+        //         if (float.IsNaN(pos.x) || float.IsInfinity(pos.x) ||
+        //             float.IsNaN(pos.y) || float.IsInfinity(pos.y) ||
+        //             float.IsNaN(pos.z) || float.IsInfinity(pos.z))
+        //         {
+        //             Debug.LogError($"Invalid position detected: {pos}");
+        //             continue;
+        //         }
+        //
+        //         EventInstance eventInstance = CreatEventInstance(bgm);
+        //         if (!eventInstance.isValid())
+        //         {
+        //             Debug.LogError("FMOD EventInstance is not valid!");
+        //             continue;
+        //         }
+        //
+        //         var fmodAttributes = RuntimeUtils.To3DAttributes(pos);
+        //         Debug.Log($"FMOD Attributes: {fmodAttributes.position.x}, {fmodAttributes.position.y}, {fmodAttributes.position.z}");
+        //
+        //         eventInstance.set3DAttributes(fmodAttributes);
+        //         BGMManager.instance.bgmInstances.Add(eventInstance);
+        //         eventInstance.start();
+        //     }
+        // }
         
         public EventInstance CreatEventInstance(EventReference eventRef)
         {
