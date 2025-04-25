@@ -332,6 +332,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - ambient
   - AnimalBand
   - BGM
   - Bird
