@@ -45,7 +45,11 @@ namespace rhythmhero
         {
             if (gameState == GameState.ThirdPerson)
             {
-                PlayerState.instance.Tick();
+                if (PlayerState.instance != null)
+                {
+                    PlayerState.instance.Tick();
+                }
+                
             }
             else if (gameState == GameState.InDialogue)
             {

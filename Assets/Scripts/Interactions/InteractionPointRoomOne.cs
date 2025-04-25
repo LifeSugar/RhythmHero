@@ -1,16 +1,14 @@
- using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
+using System.Collections;
 using DG.Tweening;
-using FMOD.Studio;
 using FMODUnity;
+using FMOD.Studio;
 using rhythmhero.audio;
-using Unity.VisualScripting;
-using UnityEngine;
+
 
 namespace rhythmhero
 {
-    //这个脚本本来应该作为交互的基类进行派生，但是有些难维护，因此请想在别的地方使用这个功能的时候手动仿照这个脚本写个新脚本
-    public class InteractionPoint : MonoBehaviour
+    public class InteractionPointRoomOne : MonoBehaviour
     {
         [Header("交互的信息UI")][Tooltip("将会显示在交互点的正上方,比如<点击以互动/对话/聆听>等等")]
         public GameObject InteractionUI;
@@ -121,5 +119,6 @@ namespace rhythmhero
                 InteractionUI.SetActive(false);
             }
         }
+   
     }
 }
