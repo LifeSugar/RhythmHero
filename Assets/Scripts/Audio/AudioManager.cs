@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using UnityEngine.SceneManagement;
 
 namespace rhythmhero.audio
 {
@@ -23,6 +24,16 @@ namespace rhythmhero.audio
                 Debug.LogWarning("More than one AudioManager in scene!");
             }
             instance = this;
+            
+            DontDestroyOnLoad(this.gameObject);
+            
+            SceneManager.sceneLoaded += OnsceneLoaded;
+        }
+
+        private void OnsceneLoaded(Scene arg0, LoadSceneMode arg1)
+        {
+            Debug.Log("Scene Loaded: " + arg0.name);
+            SceneManager.MoveGameObjectToScene(this.gameObject, arg0);
         }
         
         public void PlayOneShot(EventReference eventRef, Vector3 worldPosition)
@@ -91,6 +102,7 @@ namespace rhythmhero.audio
             instanceCout++;
             return eventInstance;
         }
+        
         
     }
 }

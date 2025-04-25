@@ -31,6 +31,9 @@ namespace rhythmhero
         
         [Header("此处是点击互动的点击音效")]
         public EventReference interactEvent;
+        
+        [SerializeField]
+        private Ambient ambient;
 
         void Start()
         {
@@ -83,12 +86,13 @@ namespace rhythmhero
         void RemoveFog(int currentline)
         {
             // Debug.Log(currentline);
-            if (currentline != 3)
+            if (currentline != 9)
             {
                 return;
             }
             else
             {
+                ambient.AmbientEventInstance.setParameterByName("wind_intensity", 0.5f);
                 //散去雾气
                 DOTween.To(() => 30f,
                     x => FogRenderFeature.instance.SetupFogIntensity(x), 1000f, 3f);

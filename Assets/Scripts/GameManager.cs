@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace rhythmhero
 {
@@ -21,9 +22,24 @@ namespace rhythmhero
                 Debug.LogError("there is more than one GameManager in scene!");
             }
             instance = this;
+            
+            DontDestroyOnLoad(this.gameObject);
+
+            SceneManager.sceneLoaded += OnsceneLoaded;
+        }
+        
+        private void OnsceneLoaded(Scene arg0, LoadSceneMode arg1)
+        {
+            Debug.Log("Scene Loaded: " + arg0.name);
+            SceneManager.MoveGameObjectToScene(this.gameObject, arg0);
         }
 
         public GameState gameState = GameState.ThirdPerson;
+
+        void Start()
+        {
+            FogRenderFeature.instance.SetupFogIntensity(30);
+        }
 
         void Update()
         {
