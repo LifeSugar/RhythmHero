@@ -251,7 +251,7 @@
 	</object>
 	<object class="SingleSound" id="{f1ecc90d-f999-42ef-bdb2-436f322fba9b}">
 		<relationship name="audioFile">
-			<destination>{8f2941b3-076e-4f44-8209-130a528e9483}</destination>
+			<destination>{f60b0b59-1938-47d0-9d1b-fa4b48bf9773}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{4af83f73-2da4-496d-bb4a-f0f581409e54}">
