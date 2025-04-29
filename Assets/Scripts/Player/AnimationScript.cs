@@ -18,6 +18,8 @@ public class AnimationScript : MonoBehaviour
 
     private Animator animator;
     private Transform playerTransform;
+    
+    public Collider hitcollider;
 
     void Start()
     {
@@ -57,6 +59,16 @@ public class AnimationScript : MonoBehaviour
         // 让子物体(模型)回到父物体的原点，避免子物体重复叠加根运动
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+    }
+
+    public void OpenCollider()
+    {
+        hitcollider.enabled = true;
+    }
+
+    public void CloseCollider()
+    {
+        hitcollider.enabled = false;
     }
 
 

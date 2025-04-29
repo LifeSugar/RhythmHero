@@ -80,19 +80,18 @@ namespace rhythmhero
         //并且要在点击时，订阅这个方法
         void Interaction(int currentline)
         {
-            if (currentline != 4)
+            if (currentline == 1)
             {
-                return;
+                this.gameObject.GetComponent<MeshRenderer>().enabled = false;
             }
-            else
+            else if (currentline == 8)
             {
-                // coconutCollider.gameObject.SetActive(true);
-
-                // StartCoroutine(NextStep());
-
+                StartCoroutine(NextStep());
             }
             
         }
+        
+        
         
         private IEnumerator NextStep()
         {
@@ -100,6 +99,7 @@ namespace rhythmhero
             Quaternion lookRotation = Quaternion.LookRotation(dir);
             yield return (Ghost.instance.transform.DORotateQuaternion(lookRotation, 0.5f));
             Ghost.instance.MoveToTargetAndLookAt(nextInteractionPoint);
+            BGMManager.instance.SwitchToTrack(2);
 
 
         }

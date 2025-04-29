@@ -94,6 +94,7 @@ namespace rhythmhero
             }
             else
             {
+                BGMManager.instance.SwitchToTrack(1);
                 ambient.AmbientEventInstance.setParameterByName("wind_intensity", 0.5f);
                 //散去雾气
                 DOTween.To(() => 30f,

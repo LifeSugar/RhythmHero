@@ -2,89 +2,101 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 namespace rhythmhero
 {
     public class CameraController : MonoBehaviour
     {
-        [Header("Stats")] public float followSpeed = 20; // 相机跟随目标的速度
-        public float mouseSpeed = 2; // 鼠标控制相机旋转的速度
-        public float turnSmoothing = .1f; // 相机平滑旋转的系数
-        public float minAngle = -20; // 垂直旋转的最小角度
-        public float maxAngle = 35; // 垂直旋转的最大角度
-        public float defaultDistance;
+        [Header("Stats")]
+        public float followSpeed = 20f;        // 相机跟随目标的速度
+        public float mouseSpeed = 2f;          // 鼠标控制相机旋转的速度
+        public float turnSmoothing = 0.1f;     // 相机平滑旋转的系数
+        public float minAngle = -20f;          // 垂直旋转的最小角度
+        public float maxAngle = 35f;           // 垂直旋转的最大角度
+        public float defaultDistance;          // 默认距离
         public Vector3 offset = new Vector3(0, 1.3f, 0);
         public float lockOffset = 0.5f;
-        
-        [Header("MoveStat")] public Vector3 targetDir; // 目标方向向量
-        public float lookAngle; // 水平旋转角度
-        public float tiltAngle; // 垂直旋转角度
-        
-        [HideInInspector] public Transform pivot; // 相机的旋转轴
-        [HideInInspector] public Transform camTrans; // 相机的Transform
-        PlayerState state;
-        Transform followTarget; //跟随目标
-        
-        float smoothX;
-        float smoothY;
-        float smoothXvelocity;
-        float smoothYvelocity;
 
+        [Header("MoveStat")]
+        public Vector3 targetDir;              // 目标方向向量
+        public float lookAngle;                // 水平旋转角度
+        public float tiltAngle;                // 垂直旋转角度
 
-        bool usedRightAxis;
+        [HideInInspector] public Transform pivot;    // 相机的俯仰轴 (X 轴转动)
+        [HideInInspector] public Transform camTrans; // 主相机的 Transform
+        private Transform camRoot;                   // 相机根，用于水平旋转 (Y 轴)
+        private PlayerState state;
+        private Transform followTarget;              // 跟随目标
 
-        bool changeTargetLeft;
-        bool changeTargetRight;
-        
-        // 用于调试的可视化数据
+        private float smoothX, smoothY;
+        private float smoothXvelocity, smoothYvelocity;
+
+        // ========== 新增 Focus 功能 ==========
+        [Header("Focus Settings")]
+        [Tooltip("焦点目标，摄像机会转向这个 Transform")]
+        public Transform focusTarget;
+        [Tooltip("在焦点期间需要禁用的脚本（例如玩家输入、移动脚本等）")]
+        public MonoBehaviour[] inputScripts;
+
+        // 临时存储视角
+        private float cachedLookAngle;
+        private float cachedTiltAngle;
+        public bool isFocusing = false;
+
+        // 过渡与停顿时长
+        private const float tweenDuration = 1f;
+        private const float holdDuration  = 1f;
+        // ======================================
+
+        // 调试用
         private Vector3 debugCandidatePos;
         private float debugCameraCollisionRadius;
         private Vector3 debugRayStart;
         private Vector3 debugRayDir;
         private float debugRayDistance;
-        
+
         public static CameraController instance;
 
-        void Awake()
+        private void Awake()
         {
             if (instance != null && instance != this)
-            {
                 Debug.LogWarning("More than one instance of CameraController found!");
-            }
             instance = this;
         }
-
 
         public void Init(PlayerState playerState)
         {
             state = playerState;
             followTarget = playerState.transform;
-            camTrans = Camera.main.transform; // 获取主相机的Transform
-            pivot = camTrans.parent; // 设置pivot为相机的父对象
-            defaultDistance = new Vector3(0, offset.z, 0).magnitude;
+
+            // 获取主相机及其层级
+            camTrans = Camera.main.transform;
+            pivot    = camTrans.parent;        // 相机的父物体：俯仰轴
+            camRoot  = pivot.parent;           // 俯仰轴的父物体：水平旋转轴
+
+            defaultDistance = new Vector3(0f, offset.z, 0f).magnitude;
             pivot.localPosition = offset;
         }
 
         private void Update()
         {
+            if (isFocusing) return;
+
             float dt = Time.deltaTime;
-            float h = Input.GetAxis("Mouse X"); // 获取水平输入
-            float v = Input.GetAxis("Mouse Y"); // 获取垂直输入
-            float targetSpeed = mouseSpeed; // 设定相机移动速度
-            HandleRotations(dt, v, h, targetSpeed); // 调用旋转处理方法
-            
+            float h  = Input.GetAxis("Mouse X");
+            float v  = Input.GetAxis("Mouse Y");
+            HandleRotations(dt, v, h, mouseSpeed);
         }
 
         private void FixedUpdate()
         {
-            float dt = Time.fixedDeltaTime;
-            HandleCameraCollision(dt);
+            HandleCameraCollision(Time.fixedDeltaTime);
         }
 
-
-        void HandleRotations(float d, float v, float h, float targetSpeed)
+        private void HandleRotations(float delta, float v, float h, float speed)
         {
-            if (turnSmoothing > 0)
+            if (turnSmoothing > 0f)
             {
                 smoothX = Mathf.SmoothDamp(smoothX, h, ref smoothXvelocity, turnSmoothing);
                 smoothY = Mathf.SmoothDamp(smoothY, v, ref smoothYvelocity, turnSmoothing);
@@ -95,86 +107,100 @@ namespace rhythmhero
                 smoothY = v;
             }
 
-            // 垂直旋转
-            tiltAngle -= smoothY * targetSpeed;
-            tiltAngle = Mathf.Clamp(tiltAngle, minAngle, maxAngle);
-            pivot.localRotation = Quaternion.Euler(tiltAngle, 0, 0);
+            // 垂直旋转（俯仰）
+            tiltAngle -= smoothY * speed;
+            tiltAngle  = Mathf.Clamp(tiltAngle, minAngle, maxAngle);
+            pivot.localRotation = Quaternion.Euler(tiltAngle, 0f, 0f);
 
-            // 水平旋转
-            lookAngle += smoothX * targetSpeed;
-            transform.rotation = Quaternion.Euler(0, lookAngle, 0);
+            // 水平旋转（偏航）
+            lookAngle += smoothX * speed;
+            camRoot.rotation = Quaternion.Euler(0f, lookAngle, 0f);
         }
-        
-        void HandleCameraCollision(float d)
+
+        private void HandleCameraCollision(float delta)
         {
-            // follow为跟随点，即玩家角色头部(或指定offset位置)
-            Vector3 follow = followTarget.position + new Vector3(0, offset.y, 0);
-
-            // 计算期望的相机位置。默认距离defaultDistance表示相机应从follow点后退多少距离。
-            // desiredCamPos代表理想情况下摄像机应放置的位置（没有碰撞干扰的情况下）
-            Vector3 desiredCamPos = follow - transform.forward * defaultDistance;
-
-            // 根据期望位置与follow点的关系，计算出一条从follow点到期望相机位置的方向向量rayDir
+            Vector3 follow = followTarget.position + Vector3.up * offset.y;
+            Vector3 desiredCamPos = follow - camRoot.forward * defaultDistance;
             Vector3 rayDir = (desiredCamPos - follow).normalized;
 
-            // 定义相机的球体半径，用于球体碰撞检测
             float cameraCollisionRadius = 0.3f;
-
-            // 定义相机最小距离，避免相机过于接近follow点，产生抖动或穿模感
             float minDistance = 0.15f;
-
-            // layerMask用于指定检测哪些层级的碰撞体
-            // 这里是 int layerMask = 1 << 28; 
-            // 意思是只检测28层所在的物体(如摄像机可碰撞层)
             int layerMask = 1 << 28;
-
-            // 初始化最终距离finalDistance为默认距离
             float finalDistance = defaultDistance;
 
-            RaycastHit hit;
-            // 首先使用Raycast沿rayDir方向从follow点发射一条射线，最大距离为defaultDistance
-            // 如果射线检测到了碰撞物体，则说明期望的位置与之重叠或在其后方
-            // 我们将finalDistance缩短到hit.distance，这样相机不会穿过障碍物
-            if (Physics.Raycast(follow, rayDir, out hit, defaultDistance, layerMask))
-            {
+            if (Physics.Raycast(follow, rayDir, out RaycastHit hit, defaultDistance, layerMask))
                 finalDistance = hit.distance;
-            }
 
-            // 基于最终计算出的距离finalDistance，确定相机候选位置candidatePos
             Vector3 candidatePos = follow + rayDir * finalDistance;
-
-            // 保存调试数据（用于 OnDrawGizmos 可视化）
             debugCandidatePos = candidatePos;
             debugCameraCollisionRadius = cameraCollisionRadius;
             debugRayStart = follow;
             debugRayDir = rayDir;
             debugRayDistance = finalDistance;
 
-            // 使用 CheckSphere 来检测candidatePos位置处，半径为cameraCollisionRadius的球体
-            // 是否与场景发生碰撞。如果有碰撞，说明即使距离缩短了，但考虑相机体积后仍在穿模
-            bool isColliding = Physics.CheckSphere(candidatePos, cameraCollisionRadius, layerMask);
-
-            // 如果球体检测仍有碰撞，则需要继续往回缩短距离，直到无碰撞或缩短到最小距离minDistance
-            while (isColliding && finalDistance > minDistance)
+            bool colliding = Physics.CheckSphere(candidatePos, cameraCollisionRadius, layerMask);
+            while (colliding && finalDistance > minDistance)
             {
-                // 每次向内收缩0.05f的距离
-                finalDistance -= 0.05f;
-                finalDistance = Mathf.Max(finalDistance, minDistance);
-
-                // 根据新的距离重新计算candidatePos
+                finalDistance = Mathf.Max(finalDistance - 0.05f, minDistance);
                 candidatePos = follow + rayDir * finalDistance;
-
-                // 再次检测球体碰撞
-                isColliding = Physics.CheckSphere(candidatePos, cameraCollisionRadius, layerMask);
-
-                // 更新调试数据，以便在场景中查看最终结果
+                colliding = Physics.CheckSphere(candidatePos, cameraCollisionRadius, layerMask);
                 debugCandidatePos = candidatePos;
                 debugRayDistance = finalDistance;
             }
 
-            // 将相机的位置平滑插值到最终确定的candidatePos
-            // d为deltaTime，followSpeed为插值速度
-            camTrans.position = Vector3.Lerp(camTrans.position, candidatePos, d * followSpeed);
+            camTrans.position = Vector3.Lerp(camTrans.position, candidatePos, delta * followSpeed);
+        }
+
+        /// <summary>
+        /// 公有方法：禁用玩家输入，用 DOTween 在 1s 内平滑转向 focusTarget，停顿 1s 再平滑返回
+        /// </summary>
+        public void FocusOnTarget()
+        {
+            if (focusTarget == null || isFocusing) return;
+            isFocusing = true;
+
+            // 1. 禁用所有指定的输入脚本
+            foreach (var script in inputScripts)
+                if (script != null) script.enabled = false;
+
+            // 2. 记录当前视角
+            cachedLookAngle = lookAngle;
+            cachedTiltAngle = tiltAngle;
+
+            // 3. 计算目标朝向
+            Vector3 dir = focusTarget.position - pivot.position;
+            Quaternion worldRot = Quaternion.LookRotation(dir);
+            float targetY = worldRot.eulerAngles.y;
+            float targetX = Mathf.Clamp(
+                // 把世界空间的俯仰转换成本地俯仰
+                Mathf.DeltaAngle(0, worldRot.eulerAngles.x),
+                minAngle, maxAngle
+            );
+
+            // 4. 构造 DOTween 序列
+            Sequence seq = DOTween.Sequence();
+            // 平滑到目标视角
+            seq.Append(camRoot.DORotate(new Vector3(0f, targetY, 0f), tweenDuration).SetEase(Ease.InOutSine));
+            seq.Join (pivot.DOLocalRotate(new Vector3(targetX, 0f, 0f), tweenDuration).SetEase(Ease.InOutSine));
+            // 停顿
+            seq.AppendInterval(holdDuration);
+            // 平滑回原视角
+            seq.Append(camRoot.DORotate(new Vector3(0f, cachedLookAngle, 0f), tweenDuration).SetEase(Ease.InOutSine));
+            seq.Join (pivot.DOLocalRotate(new Vector3(cachedTiltAngle, 0f, 0f), tweenDuration).SetEase(Ease.InOutSine));
+            // 完成后恢复
+            seq.OnComplete(() =>
+            {
+                foreach (var script in inputScripts)
+                    if (script != null) script.enabled = true;
+                isFocusing = false;
+            });
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(debugCandidatePos, debugCameraCollisionRadius);
+            Gizmos.DrawLine(debugRayStart, debugRayStart + debugRayDir * debugRayDistance);
         }
     }
 }
