@@ -116,7 +116,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CenterPos: {r: 33.221172, g: 0.00068748, b: -13.15208, a: 0}
+    - _CenterPos: {r: 43.81704, g: 0.2086463, b: -28.605427, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FogColor: {r: 1, g: 0.91822577, b: 0.66352195, a: 1}

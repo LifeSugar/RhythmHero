@@ -7275,7 +7275,7 @@ MonoBehaviour:
       Data3: 1324875693
       Data4: 2118665528
     Path: event:/UI/UIInteraction
-  nextInteractionPoint: {fileID: 0}
+  nextInteractionPoint: {fileID: 1073055734}
   coconutCollider: {fileID: 0}
   sky: {fileID: 1866687209}
   Animals: {fileID: 401629417}
@@ -18313,6 +18313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 808082934}
   - component: {fileID: 808082935}
+  - component: {fileID: 808082936}
   m_Layer: 0
   m_Name: InteractionPoint (1)
   m_TagString: Untagged
@@ -18357,6 +18358,40 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.5098606
   m_Center: {x: 0, y: 0, z: 0.3098606}
+--- !u!114 &808082936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808082933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85f936cbf5140d5ab69e3ac64acaaff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionUI: {fileID: 1551311623}
+  hasInteracted: 0
+  dialogue: {fileID: 11400000, guid: 2d820fdbebce68e468448f6af6e8b140, type: 2}
+  Sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  interactEvent:
+    Guid:
+      Data1: 614663230
+      Data2: 1288829876
+      Data3: 1324875693
+      Data4: 2118665528
+    Path: event:/UI/UIInteraction
+  nextInteractionPoint: {fileID: 0}
+  coconutCollider: {fileID: 0}
+  sky: {fileID: 0}
+  Animals: {fileID: 0}
+  inArea: 0
 --- !u!1001 &808545378
 PrefabInstance:
   m_ObjectHideFlags: 0

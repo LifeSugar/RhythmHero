@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
+
 using System.Collections;
 using DG.Tweening;
 using FMODUnity;
 using FMOD.Studio;
 using rhythmhero.audio;
+using UnityEngine.SceneManagement;
+
 namespace rhythmhero
 {
-    public class LastInteraction : MonoBehaviour
+    public class FinalInteraction : MonoBehaviour
     {
          [Header("交互的信息UI")][Tooltip("将会显示在交互点的正上方,比如<点击以互动/对话/聆听>等等")]
         public GameObject InteractionUI;
@@ -83,29 +86,21 @@ namespace rhythmhero
         //并且要在点击时，订阅这个方法
         void Interaction(int currentline)
         {
-            if (currentline == 2)
+            if (currentline == 5)
             {
-                CameraController.instance.focusTarget = sky;
-                CameraController.instance.FocusOnTarget();
-                StartCoroutine(NextStep());
-            }
-
-            if (currentline == 4)
-            {
-                CameraController.instance.focusTarget = Animals;
-                CameraController.instance.FocusOnTarget();
-                StartCoroutine(NextNStep());
                 
+                SceneManager.LoadScene("Sing");
             }
             
             
         }
         
+        
         private IEnumerator NextStep()
         {
             yield return new WaitForSeconds(1.0f);
             Animals.gameObject.SetActive(true);
-            
+            StartCoroutine(NextNStep());
 
 
         }
