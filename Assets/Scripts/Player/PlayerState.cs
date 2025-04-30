@@ -14,7 +14,7 @@ namespace rhythmhero
         
         // 用来记录上一帧是否在跑动
         [SerializeField] private bool isrunning = false;
-        private Vector3 inputDirection;
+        public Vector3 inputDirection;
         
         [Header("攻击状态")]
         [SerializeField] bool isAttacking = false;
@@ -50,6 +50,7 @@ namespace rhythmhero
                 rb.freezeRotation = true;  // 防止 Rigidbody 因碰撞导致角色旋转
             }
         }
+        
 
         public void Tick()
         {
@@ -70,6 +71,11 @@ namespace rhythmhero
         public void FixedTick()
         {
             HandleMovement();
+        }
+
+        public void StopRunning()
+        {
+            animator.SetBool("isRunning", false);
         }
 
         private void HandleMovement()
