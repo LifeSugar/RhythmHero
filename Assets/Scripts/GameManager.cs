@@ -64,6 +64,11 @@ namespace rhythmhero
             }
             else if (gameState == GameState.InDialogue)
             {
+                if (PlayerState.instance != null)
+                {
+                    PlayerState.instance.inputDirection = Vector2.zero;
+                    PlayerState.instance.StopRunning();
+                }
                 DialogueManager.instance.Tick();
             }
         }

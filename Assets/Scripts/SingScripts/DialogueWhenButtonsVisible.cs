@@ -1,6 +1,8 @@
 ﻿using System;
 using rhythmhero;
+using rhythmhero.audio;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueWhenButtonsVisible : MonoBehaviour
@@ -126,6 +128,20 @@ public class DialogueWhenButtonsVisible : MonoBehaviour
         dialogue3.OnDialogueLineChanged += DialogueThreeEnd;
         correctButtonOne.onClick.AddListener(() => NextDialogueTwo());
         correctButtonTwo.onClick.AddListener(() => NextDialogueThree());
+    }
+
+    public void QuitGame()
+    {
+        FMODManager.singleton.StopMusic();
+        DestroyImmediate(GameManager.instance.gameObject);
+        DestroyImmediate(AudioManager.instance.gameObject);
+        DestroyImmediate(BGMManager.instance.gameObject);
+        Application.Quit();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("StartPage");
     }
 }
 

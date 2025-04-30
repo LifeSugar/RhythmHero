@@ -20,6 +20,7 @@ namespace rhythmhero
         public void click()
         {
             bg.SetActive(true);
+            FMODManager.singleton.StopMusic();
             // DialogueManager.instance.currentData = dialogueData;
             // DialogueManager.instance.StartDialogue();
         }

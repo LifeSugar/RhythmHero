@@ -2,15 +2,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class FMODManager : MonoBehaviour
 {
     [Header("FMOD Event")]
     [SerializeField] private EventReference animalConcertEvent;
+    
+    public static FMODManager singleton;
+
+    void Awake()
+    {
+        singleton = this;
+    }
+
+    public void StopMusic()
+    {
+        instance.stop(STOP_MODE.IMMEDIATE);
+    }
 
     private EventInstance instance;
 
-    // µ±Ç°Ã¿Ò»ÂÖµÄÑ¡Ôñ£¨Ä¬ÈÏÖµÎª0±íÊ¾Î´Ñ¡Ôñ£©
+    // ï¿½ï¿½Ç°Ã¿Ò»ï¿½Öµï¿½Ñ¡ï¿½ï¿½Ä¬ï¿½ï¿½ÖµÎª0ï¿½ï¿½Ê¾Î´Ñ¡ï¿½ï¿½
     private Dictionary<int, int> roundSelections = new Dictionary<int, int>()
     {
         { 1, 0 },
@@ -23,39 +36,39 @@ public class FMODManager : MonoBehaviour
     {
         instance = RuntimeManager.CreateInstance(animalConcertEvent);
 
-        // ³õÊ¼»¯²ÎÊý£¬È·±£²»»á×Ô¶¯²¥·Å
+        // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½
         for (int i = 1; i <= 4; i++)
         {
             instance.setParameterByName("Animal_R" + i, 0);
         }
 
-        instance.start(); // Ä¬ÈÏÆô¶¯£¬µ«²»²¥·ÅÈÎºÎ¹ìµÀ
+        instance.start(); // Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎºÎ¹ï¿½ï¿½
     }
 
-    // Íâ²¿°´Å¥µ÷ÓÃÕâ¸öº¯Êý£º´«Èë 1~12 µÄ±àºÅ£¬´ú±íÂÖ´ÎÓë¶¯ÎïÀàÐÍ
+    // ï¿½â²¿ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1~12 ï¿½Ä±ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ë¶¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public void SetTrack(int trackCode)
     {
         int round = (trackCode - 1) / 3 + 1; // 1~3 -> Round 1, 4~6 -> Round 2, etc.
 
-        // ¶¯ÎïÀàÐÍÓ³Éä£ºÄñ¡ú1£¬ºï¡ú3£¬Éß¡ú2
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ä£ºï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ß¡ï¿½2
         int[] animalMap = { 1, 3, 2 };
         int animalIndex = animalMap[(trackCode - 1) % 3];
 
-        Debug.Log( "  ÉèÖÃ Round = {round}, Animal = {animalIndex}");
+        Debug.Log( "  ï¿½ï¿½ï¿½ï¿½ Round = {round}, Animal = {animalIndex}");
 
-        // ¹Ø¼ü£ºÇ¿ÖÆÖØ²¥ÒôÆµ£¨È·±£Óë¶¯»­Í¬²½£©
-        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); // Á¢¿ÌÍ£Ö¹µ±Ç°²¥·Å
-        instance.start(); // ÖØÐÂ²¥·ÅÊÂ¼þ
+        // ï¿½Ø¼ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½Ø²ï¿½ï¿½ï¿½Æµï¿½ï¿½È·ï¿½ï¿½ï¿½ë¶¯ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); // ï¿½ï¿½ï¿½ï¿½Í£Ö¹ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
+        instance.start(); // ï¿½ï¿½ï¿½Â²ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 
-        //  ÖØÐÂÉèÖÃ²ÎÊý£¬È·±£ÖØÐÂ´¥·¢ÉùÒô±ä»¯
+        //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ä»¯
         instance.setParameterByName("Animal_R" + round, 0);
         instance.setParameterByName("Animal_R" + round, animalIndex);
 
-        // ¸üÐÂÑ¡Ôñ¼ÇÂ¼
+        // ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Â¼
         roundSelections[round] = animalIndex;
     }
 
-    // Íâ²¿¿Éµ÷ÓÃ£ºÇå³ýËùÓÐÂÖ´ÎµÄÑ¡Ôñ
+    // ï¿½â²¿ï¿½Éµï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´Îµï¿½Ñ¡ï¿½ï¿½
     public void ResetAll()
     {
         for (int i = 1; i <= 4; i++)
