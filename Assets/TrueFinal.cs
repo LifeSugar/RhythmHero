@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using rhythmhero.audio;
 using UnityEngine;
 
 namespace rhythmhero
@@ -21,6 +22,7 @@ namespace rhythmhero
         {
             bg.SetActive(true);
             FMODManager.singleton.StopMusic();
+            BGMManager.instance.StopBGM();
             // DialogueManager.instance.currentData = dialogueData;
             // DialogueManager.instance.StartDialogue();
         }

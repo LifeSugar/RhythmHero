@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace rhythmhero.audio
 {
@@ -16,6 +17,15 @@ namespace rhythmhero.audio
     {
         /* ─────────────── 单例 ─────────────── */
         public static BGMManager instance { get; private set; }
+
+        public void StopBGM()
+        {
+            var bgmins = CurrentTrack.instance;
+            if (currentTrackIndex != -1)
+            {
+                bgmins.stop(STOP_MODE.IMMEDIATE);
+            }
+        }
 
         /* ─────────────── 数据结构 ─────────────── */
 

@@ -54,6 +54,12 @@ namespace rhythmhero
             {
                 SceneManager.LoadScene("Sing_1");
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                HandleESC();
+            }
+            
             if (gameState == GameState.ThirdPerson)
             {
                 if (PlayerState.instance != null)
@@ -71,6 +77,14 @@ namespace rhythmhero
                 }
                 DialogueManager.instance.Tick();
             }
+            else if (gameState == GameState.Paused)
+            {
+                if (PlayerState.instance != null)
+                {
+                    PlayerState.instance.inputDirection = Vector2.zero;
+                    PlayerState.instance.StopRunning();
+                }
+            }
         }
 
         void FixedUpdate()
@@ -80,6 +94,15 @@ namespace rhythmhero
                 if (PlayerState.instance != null)
                     PlayerState.instance.FixedTick();
             }
+        }
+
+        public GameObject quitPanel;
+        public void HandleESC()
+        {
+            quitPanel.SetActive(true);
+            gameState = GameState.Paused;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
     }
