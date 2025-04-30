@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{76cc2c9b-8539-4eb0-9a10-df31e3054389}">
+		<property name="assetPath">
+			<value>snake2.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>17.454557823129253</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50f1fba5-c29c-417d-943d-013c511399b3}</destination>
+		</relationship>
+	</object>
+</objects>
