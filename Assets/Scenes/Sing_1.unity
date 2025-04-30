@@ -13404,7 +13404,7 @@ GameObject:
   - component: {fileID: 1296407881}
   - component: {fileID: 1296407880}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: quitPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13417,19 +13417,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296407878}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3814, y: 0.3814, z: 0.3814}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1923136299}
   - {fileID: 661257774}
-  m_Father: {fileID: 1504486460}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2517.0427, y: 1415.8364}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1296407880
 MonoBehaviour:
@@ -15420,7 +15420,6 @@ RectTransform:
   - {fileID: 1747978}
   - {fileID: 42863071}
   - {fileID: 208027987}
-  - {fileID: 1296407879}
   - {fileID: 1192271385}
   - {fileID: 1325137223}
   m_Father: {fileID: 0}
@@ -22342,6 +22341,7 @@ SceneRoots:
   - {fileID: 254760999}
   - {fileID: 1800139947}
   - {fileID: 1504486460}
+  - {fileID: 1296407879}
   - {fileID: 132523931}
   - {fileID: 1713716308}
   - {fileID: 1960311173}
