@@ -55,16 +55,17 @@ namespace rhythmhero
                 SceneManager.LoadScene("Sing_1");
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                HandleESC();
-            }
+           
             
             if (gameState == GameState.ThirdPerson)
             {
                 if (PlayerState.instance != null)
                 {
                     PlayerState.instance.Tick();
+                }
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    HandleESC();
                 }
                 
             }
