@@ -28,10 +28,17 @@ namespace rhythmhero
             SceneManager.sceneLoaded += OnsceneLoaded;
         }
         
+        
         private void OnsceneLoaded(Scene arg0, LoadSceneMode arg1)
         {
             Debug.Log("Scene Loaded: " + arg0.name);
-            SceneManager.MoveGameObjectToScene(this.gameObject, arg0);
+
+            if (arg0.name == "Sing_1")
+            {
+                gameState = GameState.TopDown;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
 
         public GameState gameState = GameState.ThirdPerson;
@@ -43,6 +50,10 @@ namespace rhythmhero
 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                SceneManager.LoadScene("Sing_1");
+            }
             if (gameState == GameState.ThirdPerson)
             {
                 if (PlayerState.instance != null)
@@ -61,7 +72,8 @@ namespace rhythmhero
         {
             if (gameState == GameState.ThirdPerson)
             {
-                PlayerState.instance.FixedTick();
+                if (PlayerState.instance != null)
+                    PlayerState.instance.FixedTick();
             }
         }
 

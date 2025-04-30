@@ -67,8 +67,11 @@ public class DialogueManager : MonoBehaviour
 
     private void OnsceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
+        // dialoguePanel.gameObject.SetActive(false);
+        if (dialoguePanel != null) dialoguePanel.gameObject.SetActive(false);
+
         Debug.Log("Scene Loaded: " + arg0.name);
-        SceneManager.MoveGameObjectToScene(this.gameObject, arg0);
+        // SceneManager.MoveGameObjectToScene(this.gameObject, arg0);
     }
 
     void Start()
@@ -119,6 +122,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentData.lines.Count > 0)
         {
+            GameManager.instance.gameState = GameState.InDialogue;
             isDialogueActive = true;
             dialoguePanel.SetActive(true);
             // endDialoguePanel.SetActive(false);

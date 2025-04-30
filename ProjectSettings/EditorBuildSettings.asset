@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/\u5730\u7F16.unity"
     guid: 9493eb715a545964e86df20e0fd9e29c
+  - enabled: 1
+    path: Assets/Scenes/Sing_1.unity
+    guid: f31ee3d21900388419befc3e8a5f2768
   m_configObjects: {}

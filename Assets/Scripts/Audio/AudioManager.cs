@@ -33,7 +33,7 @@ namespace rhythmhero.audio
         private void OnsceneLoaded(Scene arg0, LoadSceneMode arg1)
         {
             Debug.Log("Scene Loaded: " + arg0.name);
-            SceneManager.MoveGameObjectToScene(this.gameObject, arg0);
+
         }
         
         public void PlayOneShot(EventReference eventRef, Vector3 worldPosition)

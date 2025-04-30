@@ -1,6 +1,7 @@
 ﻿using System;
 using rhythmhero;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueWhenButtonsVisible : MonoBehaviour
 {
@@ -14,16 +15,19 @@ public class DialogueWhenButtonsVisible : MonoBehaviour
     public bool triggerOnce = true;
 
     [Header("对话内容")]
-    public DialogueData dialogue;
+    public DialogueData dialogue1;
+    public DialogueData dialogue2;
+    public DialogueData dialogue3;
 
-    [Header("触发对话的对象（可选）")]
-    public GameObject dialoguePanel;
+    // [Header("触发对话的对象（可选）")]
+    // public GameObject dialoguePanel;
 
     private bool hasTriggered = false;
 
     private void Start()
     {
-        dialoguePanel = DialogueManager.instance.dialoguePanel;
+        // dialoguePanel = DialogueManager.instance.dialoguePanel;
+        InitialQuestion();
     }
 
     void Update()
@@ -63,12 +67,65 @@ public class DialogueWhenButtonsVisible : MonoBehaviour
     void TriggerDialogue()
     {
         Debug.Log("四个按钮都可见，且四个面板都隐藏，触发对话！");
-        if (dialoguePanel != null)
+        DialogueManager.instance.currentData = dialogue1;
+        DialogueManager.instance.StartDialogue();
+    }
+
+    
+    [Header("第一次问题")] public GameObject FirstQuestion;
+    public Button correctButtonOne;
+    
+    [Header("第二次问题")]
+    public GameObject SecondQuestion;
+    public Button correctButtonTwo;
+    
+    void DialogueOneEnd(int currentIndex)
+    {
+        if (currentIndex == dialogue1.lines.Count)
         {
-            dialoguePanel.SetActive(true);
-            DialogueManager.instance.currentData = dialogue;
-            DialogueManager.instance.StartDialogue();
+            FirstQuestion.SetActive(true);
         }
+    }
+
+    public void NextDialogueTwo()
+    {
+        FirstQuestion.SetActive(false);
+        DialogueManager.instance.currentData = dialogue2;
+        DialogueManager.instance.StartDialogue();
+    }
+
+    void DialogueTwoEnd(int currentIndex)
+    {
+        if (currentIndex == dialogue2.lines.Count)
+        {
+            SecondQuestion.SetActive(true);
+        }
+    }
+
+    public void NextDialogueThree()
+    {
+        SecondQuestion.SetActive(false);
+        DialogueManager.instance.currentData = dialogue3;
+        DialogueManager.instance.StartDialogue();
+    }
+
+    void DialogueThreeEnd(int currentIndex)
+    {
+        if (currentIndex == dialogue3.lines.Count)
+        {
+            EndPanel.SetActive(true);
+        }
+    }
+
+    public GameObject EndPanel;
+
+    void InitialQuestion()
+    {
+        dialogue1.OnDialogueLineChanged += DialogueOneEnd;
+        dialogue2.OnDialogueLineChanged += DialogueTwoEnd;
+        dialogue3.OnDialogueLineChanged += DialogueThreeEnd;
+        correctButtonOne.onClick.AddListener(() => NextDialogueTwo());
+        correctButtonTwo.onClick.AddListener(() => NextDialogueThree());
     }
 }
 

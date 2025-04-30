@@ -38,6 +38,8 @@ namespace rhythmhero
 
             animator = GetComponentInChildren<Animator>();
             rb = GetComponent<Rigidbody>();
+            
+            FogRenderFeature.instance.SetupPlayerPos(transform.position);
 
             if (rb == null)
             {

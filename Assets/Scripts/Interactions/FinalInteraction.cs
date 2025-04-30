@@ -89,7 +89,7 @@ namespace rhythmhero
             if (currentline == 5)
             {
                 
-                SceneManager.LoadScene("Sing");
+                SceneManager.LoadScene("Sing_1");
             }
             
             
